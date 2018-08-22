@@ -1,0 +1,400 @@
+<html lang="zh-CN" data-blockbyte-bs-uid="68116"><head>
+	<title>学生课表查询</title>
+	
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Copyright" content="zfsoft">	
+<link rel="icon" href="/jwglxt/logo/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/jwglxt/logo/favicon.ico" type="image/x-icon">
+<style type="text/css">	
+	.active{font-weight: bolder;}
+	#navbar-tabs li{ margin-top: 2px;}
+	#navbar-tabs li a{ border-top: 2px solid transparent;}
+	#navbar-tabs li.active a{border-top: 2px solid #0770cd;}
+</style>	
+<!--jQuery核心框架库 -->
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/other_jquery/jquery-1.12.4.min.js?ver=20180531"></script>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/jquery-migrate-1.4.1.min.js?ver=20180531"></script>
+<!--jQuery浏览器检测 -->
+<script type="text/javascript" src="/jwglxt/js/browse/browse-judge.js?ver=20180531"></script>
+<script type="text/javascript">
+	//浏览器版本验证
+	var broswer = broswer();
+	if(broswer.msie==true||broswer.safari==true||broswer.mozilla==true||broswer.chrome==true){
+		if(broswer.msie==true&&broswer.version<9){
+		   window.location.href = _path+"/xtgl/init_cxBrowser.html";
+		}
+	}else{
+		 window.location.href = _path+"/xtgl/init_cxBrowser.html";
+	}
+</script>
+<script type="text/javascript">
+var _path 				= "/jwglxt";
+var _systemPath 		= "/jwglxt";
+var _stylePath 			= "/zftal-ui-v5-1.0.2";
+var _reportPath 		= "http://210.34.213.201:80/WebReport";
+var _refreshInterval	= "10";
+var _localeKey 			= "zh_CN";
+</script>
+<!--
+jquery.ui 需要在bootstrap之前加载，解决冲突问题
+http://blog.csdn.net/remote_roamer/article/details/14105999
+-->
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/jquery-ui-custom.contact-1.0.0.js?ver=20180531"></script>
+<!--Bootstrap布局框架-->
+<link rel="stylesheet" type="text/css" href="/zftal-ui-v5-1.0.2/assets/plugins/bootstrap/css/bootstrap.min.css?ver=20180531">
+<link rel="stylesheet" type="text/css" href="/zftal-ui-v5-1.0.2/assets/css/error.css?ver=20180531">
+<link rel="stylesheet" type="text/css" href="/zftal-ui-v5-1.0.2/assets/css/zftal-ui.css?ver=20180531">
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/bootstrap/js/bootstrap.min.js?ver=20180531" charset="utf-8"></script>
+<!--jQuery常用工具扩展库：基础工具,资源加载工具,元素尺寸相关工具 -->
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/zftal/jquery.utils.contact-min.js?ver=20180531" charset="utf-8"></script>
+<!--jQuery基础工具库：$.browser,$.cookie,$.actual等 -->
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/zftal/jquery.plugins.contact-min.js?ver=20180531" charset="utf-8"></script>
+<!--jQuery自定义event事件库 -->
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/zftal/jquery.events.contact-min.js?ver=20180531" charset="utf-8"></script>
+<!--JavaScript对象扩展库：Array,Date,Number,String -->
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/zftal/jquery.extends.contact-min.js?ver=20180531" charset="utf-8"></script>
+<!--Bootbox弹窗插件-->
+<link rel="stylesheet" type="text/css" href="/zftal-ui-v5-1.0.2/assets/plugins/bootbox/css/bootbox.css?ver=20180531">
+<script src="/zftal-ui-v5-1.0.2/assets/plugins/bootbox/bootbox.concat-min.js?ver=20180531" type="text/javascript" charset="utf-8"></script>
+<script src="/zftal-ui-v5-1.0.2/assets/plugins/bootbox/lang/zh_CN.js?ver=20180531" type="text/javascript" charset="utf-8"></script>
+
+<!--jQuery模拟滚动条库-->
+<link rel="stylesheet" type="text/css" href="/zftal-ui-v5-1.0.2/assets/plugins/customscrollbar/css/jquery.mCustomScrollbar.min.css?ver=20180531">
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/customscrollbar/js/jquery.mCustomScrollbar.min.js?ver=20180531" charset="utf-8"></script>
+<!--jQuery.chosen美化插件-->
+<link rel="stylesheet" type="text/css" href="/zftal-ui-v5-1.0.2/assets/plugins/chosen/css/chosen-min.css?ver=20180531">
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/chosen/jquery.choosen.concat-min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/chosen/lang/zh_CN-min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/utils/jquery.utils.pinyin.min.js?ver=20180531" charset="utf-8"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/html5shiv.min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/respond.min.js?ver=20180531" charset="utf-8"></script>
+<![endif]-->
+<!--业务框架jQuery全局设置和通用函数库-->
+<script type="text/javascript" src="/jwglxt/js/jquery.zftal.contact-min.js?ver=20180531"></script>
+<!--国际化js库 -->
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/i18n/jquery.i18n-min.js?ver=20180531" charset="utf-8"></script>
+<!--全局国际化js. -->
+<script type="text/javascript" src="/jwglxt/js/globalweb/i18n-global_zh_CN.js?ver=20180531" charset="utf-8"></script>
+<!--业务框架前端脚本国际化库-->
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/zftal/lang/jquery.zftal_zh_CN-min.js?ver=20180531"></script>
+<!--密码强弱判断-->
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/js/utils/jquery.utils.strength.min.js?ver=20180531"></script>
+
+	
+	
+
+
+
+	
+<script type="text/javascript">
+
+	var _path 		= "/jwglxt";
+	var _systemPath = "/jwglxt";
+	var _stylePath  = "/zftal-ui-v5-1.0.2";
+	var _reportPath = "http://210.34.213.201:80/WebReport";
+	var _localeKey 			= "zh_CN";
+	
+	jQuery(function($){
+		$('[data-toggle*="validation"]').trigger("validation");
+		$('[data-toggle*="fixed"]').trigger("fixed");
+		if($.fn.tooltip){
+			$('[data-toggle*="tooltip"]').tooltip({container:'body'});
+		}
+	});
+	
+</script>
+
+
+	<style type="text/css">
+		td.td_wrap {word-wrap: break-word; word-break: break-all;}
+	</style>
+	<script type="text/javascript">
+		var language=localStorage.getItem('language');
+		console.log(language);//zh_CN  en_US
+	</script>
+	
+<style class="blockbyte-bs-style" data-name="content">body>div#blockbyte-bs-indicator>div{opacity:0;pointer-events:none}body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible,body>iframe#blockbyte-bs-overlay.blockbyte-bs-visible{opacity:1;pointer-events:auto}body.blockbyte-bs-noscroll{overflow:hidden !important}body>div#blockbyte-bs-indicator>div{position:absolute;transform:translate3d(-40px, 0, 0);top:0;left:0;width:40px !important;height:100%;background:rgba(0,0,0,0.5);border-radius:0 10px 10px 0;transition:opacity 0.3s, transform 0.3s;z-index:2}body>div#blockbyte-bs-indicator>div>span{-webkit-mask:no-repeat center/32px;-webkit-mask-image:url(chrome-extension://jdbnofccmhefkmjbkkdkfiicjkgofkdh/img/icon-bookmark.svg);background-color:#ffffff;position:absolute;display:block;top:0;left:0;width:100%;height:100%}body>div#blockbyte-bs-indicator[data-pos='right']{left:auto;right:0}body>div#blockbyte-bs-indicator[data-pos='right']>div{transform:translate3d(40px, 0, 0);left:auto;right:0;border-radius:10px 0 0 10px}body>div#blockbyte-bs-indicator.blockbyte-bs-fullHeight>div{border-radius:0}body>div#blockbyte-bs-indicator.blockbyte-bs-hover>div{transform:translate3d(0, 0, 0);opacity:1}body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb{height:100% !important;top:0 !important}body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div{background:transparent}body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div>span{-webkit-mask-position-y:20px}body>iframe#blockbyte-bs-sidebar{width:350px;max-width:none;height:0;z-index:2147483646;background-color:rgba(255,255,255,0.8) !important;border:none;display:block !important;transform:translate3d(-350px, 0, 0);transition:width 0s 0.3s, height 0s 0.3s, opacity 0.3s, transform 0.3s}body>iframe#blockbyte-bs-sidebar[data-pos='right']{left:auto;right:0;transform:translate3d(350px, 0, 0)}body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible{width:calc(100% + 350px);height:100%;transform:translate3d(0, 0, 0);transition:opacity 0.3s, transform 0.3s}body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask{background:none !important}body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask:not(.blockbyte-bs-hover){width:calc(350px + 50px)}body>iframe#blockbyte-bs-overlay{width:100%;max-width:none;height:100%;z-index:2147483647;border:none;background:rgba(0,0,0,0.5) !important;transition:opacity 0.3s}
+</style></head>
+<body>
+<input type="hidden" id="pkey" name="pkey" value="">
+	<!-- 头部 开始 -->
+	<header class="navbar-inverse top2">
+		<div class="container" id="navbar_container">
+					<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only"> 学生课表查询</span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" id="topButton" class="navbar-brand" onclick="onClickMenu('/kbcx/xskbcx_cxXskbcxIndex.html','N253508')">
+					学生课表查询
+				</a>
+				<script type="text/javascript">
+					document.title="学生课表查询";
+				</script>
+			</div>
+		</div>
+<!-- navbar-end  -->
+		</div>
+	</header>
+	
+	<!--头部 结束 -->
+	<div style="width: 100%; padding: 0px; margin: 0px;" id="bodyContainer">
+		<!-- requestMap中的参数为系统级别控制参数，请勿删除 -->
+		<form id="requestMap">
+			 <input type="hidden" id="sessionUserKey" value=""> 
+			 
+			 	<input type="hidden" id="gnmkdmKey" value="N253508">
+			 
+			 
+		</form>
+		<div class="container container-func sl_all_bg" id="yhgnPage" style="min-height: 3528px;">
+			<div id="innerContainer">
+				<!-- 放置页面显示内容 -->
+				
+<input type="hidden" id="dcclbh" name="dcclbh" value="JW_N2151_XSKBCX">
+        
+<form id="ajaxForm1" name="form" onsubmit="return false;" action="/jwglxt/kbcx/xskbcx_cxXskbcxIndex.html" method="post" class="form-horizontal sl_all_form sl_all_bg" style="margin-bottom: 12px;" role="form" data-toggle="validation" novalidate="novalidate">
+<div class="row" id="cxtjDiv">
+	<div class="col-md-4 col-sm-5">
+		<div class="form-group">
+			<label for="" class="col-sm-4 control-label" id="xn"><span style="color:red;">*</span>学年</label>
+			<div class="col-sm-8">
+				<select name="xnm" id="xnm1" class="form-control chosen-select success" validate="{required:true}" style="display: none;" aria-required="true" aria-invalid="false">
+    <option value="">---请选择---</option>
+    <option value="2022">2022-2023</option>
+    <option value="2021">2021-2022</option>
+    <option value="2020">2020-2021</option>
+    <option value="2019">2019-2020</option>
+    <option value="2018">2018-2019</option>
+    <option value="2017" selected="selected">2017-2018</option>
+    <option value="2016">2016-2017</option>
+    <option value="2015">2015-2016</option>
+    <option value="2014">2014-2015</option>
+    <option value="2013">2013-2014</option>
+    <option value="2012">2012-2013</option>
+    <option value="2011">2011-2012</option>
+    <option value="2010">2010-2011</option>
+    <option value="2009">2009-2010</option>
+    <option value="2008">2008-2009</option>
+    <option value="2007">2007-2008</option>
+    <option value="2006">2006-2007</option>
+    <option value="2005">2005-2006</option>
+
+
+</select><div class="chosen-container chosen-container-single" style="width: 100%; z-index: 1010;" id="xnm1_chosen" data-original-title="" title=""><a class="chosen-single" tabindex="-1"><span>2017-2018</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" name="autocomplete" aria-invalid="false" class="success"></div><ul class="chosen-results"><li class="active-result" data-option-array-index="0" style="">---请选择---</li><li class="active-result" data-option-array-index="1" style="">2022-2023</li><li class="active-result" data-option-array-index="2" style="">2021-2022</li><li class="active-result" data-option-array-index="3" style="">2020-2021</li><li class="active-result" data-option-array-index="4" style="">2019-2020</li><li class="active-result result-selected" data-option-array-index="5" style="">2018-2019</li><li class="active-result" data-option-array-index="6" style="">2017-2018</li><li class="active-result" data-option-array-index="7" style="">2016-2017</li><li class="active-result" data-option-array-index="8" style="">2015-2016</li><li class="active-result" data-option-array-index="9" style="">2014-2015</li><li class="active-result" data-option-array-index="10" style="">2013-2014</li><li class="active-result" data-option-array-index="11" style="">2012-2013</li><li class="active-result" data-option-array-index="12" style="">2011-2012</li><li class="active-result" data-option-array-index="13" style="">2010-2011</li><li class="active-result" data-option-array-index="14" style="">2009-2010</li><li class="active-result" data-option-array-index="15" style="">2008-2009</li><li class="active-result" data-option-array-index="16" style="">2007-2008</li><li class="active-result" data-option-array-index="17" style="">2006-2007</li><li class="active-result" data-option-array-index="18" style="">2005-2006</li></ul></div></div>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 col-sm-5">
+		<div class="form-group">
+			<label for="" class="col-sm-4 control-label" id="xq"><span style="color:red;">*</span>学期</label>
+			<div class="col-sm-8">
+				<select name="xqm" id="xqm1" class="form-control chosen-select success" validate="{required:true}" style="display: none;" aria-required="true" aria-invalid="false">
+    <option value="">---请选择---</option>
+    <option value="3">1</option>
+    <option value="12">2</option>
+    <option value="16" selected="selected">3</option>
+
+
+</select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 100%; z-index: 1009;" id="xqm1_chosen" data-original-title="" title=""><a class="chosen-single" tabindex="-1"><span>1</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" name="autocomplete" readonly="" aria-invalid="false" class="success"></div><ul class="chosen-results"><li class="active-result" data-option-array-index="0" style="">---请选择---</li><li class="active-result result-selected" data-option-array-index="1" style="">1</li><li class="active-result" data-option-array-index="2" style="">2</li><li class="active-result" data-option-array-index="3" style="">3</li></ul></div></div>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 col-sm-2"><div class="form-group"><div class="col-sm-12">
+		<button type="button" class="btn btn-primary btn-sm pull-right success" id="search_go1" onclick="searchResult1()" aria-invalid="false"><span class="bigger-120 glyphicon glyphicon-search"></span> 查询</button>
+	</div></div></div>
+</div>
+<script type="text/javascript">
+	$('.chosen-select').trigger("chosen");
+</script>
+</form>
+
+
+
+
+        
+<form id="ajaxForm2" name="form" onsubmit="return false;" action="/jwglxt/kbcx/xskbcx_cxXskbcxIndex.html" method="post" class="form-horizontal sl_all_form sl_all_bg" style="margin-bottom:12px;display:none;" role="form" data-toggle="validation" novalidate="novalidate">
+<div class="row" id="cxywtjDiv">
+	<div class="col-md-4 col-sm-5">
+		<div class="form-group">
+			<label for="" class="col-sm-4 control-label"><span style="color:red;">*</span>academic year</label>
+			<div class="col-sm-8">
+				<select name="xnm" id="xnm2" class="form-control chosen-select" validate="{required:true}" style="display: none;">
+    <option value="">---please select---</option>
+    <option value="2022">2022-2023</option>
+    <option value="2021">2021-2022</option>
+    <option value="2020">2020-2021</option>
+    <option value="2019">2019-2020</option>
+    <option value="2018">2018-2019</option>
+    <option value="2017" selected="selected">2017-2018</option>
+    <option value="2016">2016-2017</option>
+    <option value="2015">2015-2016</option>
+    <option value="2014">2014-2015</option>
+    <option value="2013">2013-2014</option>
+    <option value="2012">2012-2013</option>
+    <option value="2011">2011-2012</option>
+    <option value="2010">2010-2011</option>
+    <option value="2009">2009-2010</option>
+    <option value="2008">2008-2009</option>
+    <option value="2007">2007-2008</option>
+    <option value="2006">2006-2007</option>
+    <option value="2005">2005-2006</option>
+
+
+</select><div class="chosen-container chosen-container-single" style="width: 100%; z-index: 1009;" title="" id="xnm2_chosen"><a class="chosen-single" tabindex="-1"><span>2017-2018</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" name="autocomplete"></div><ul class="chosen-results"></ul></div></div>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 col-sm-5">
+		<div class="form-group">
+			<label for="" class="col-sm-4 control-label"><span style="color:red;">*</span>term</label>
+			<div class="col-sm-8">
+				<select name="xqm" id="xqm2" class="form-control chosen-select" validate="{required:true}" style="display: none;">
+    <option value="">---please select---</option>
+    <option value="3">1</option>
+    <option value="12">2</option>
+    <option value="16" selected="selected">3</option>
+
+
+</select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 100%; z-index: 1009;" title="" id="xqm2_chosen"><a class="chosen-single" tabindex="-1"><span>3</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" name="autocomplete" readonly=""></div><ul class="chosen-results"></ul></div></div>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 col-sm-2"><div class="form-group"><div class="col-sm-12">
+		<button type="button" class="btn btn-primary btn-sm pull-right" id="search_go2" onclick="searchResult2()"><span class="bigger-120 glyphicon glyphicon-search"></span> Search</button>
+	</div></div></div>
+</div>
+<script type="text/javascript">
+	$('.chosen-select').trigger("chosen");
+</script>
+</form>
+
+
+
+
+<div class="row sl_add_btn">
+	<div class="col-sm-12">
+		<div class="pull-left" style="margin-left: 10px; margin-top: 10px;">
+			<i class="blue bigger-150 glyphicon glyphicon-cog" style="cursor:pointer" id="kbcong" data-original-title="" title=""></i>
+		</div>
+		<div class="btn-toolbar pull-right" role="toolbar" id="tb">
+			<button type="button" class="btn btn-default" id="shcPDF" data-type="table"><span class="bigger-120 glyphicon glyphicon-print"> 输出PDF</span></button>
+			<button type="button" class="btn btn-default btn-primary" href="#table1" role="tab" data-toggle="tab" data-type="table"><span class="bigger-120 glyphicon glyphicon-th-large"></span> 表格</button>
+			<button type="button" class="btn btn-default" href="#table2" role="tab" data-toggle="tab" data-type="list"><span class="bigger-120 glyphicon glyphicon-align-justify"></span> 列表</button>
+		</div>
+	</div>
+</div>
+<div class="tab-content" id="ylkbTable">
+	<div class="tab-pane fade active in" id="table1" style=""><table id="kbgrid_table_0" class="table table-hover table-bordered text-center timetable1" style="width:98%;margin-left:10px"><tbody><tr><td colspan="9"><div class="timetable_title"><h6 class="pull-left">2017-2018学年第1学期</h6>xxx的课表<h6 class="pull-right">　学号：xxx</h6></div><div><span class="pull-left">★-理论□-课外◆-实践☆-实验</span><span class="pull-right"><font color="red" size="3"><b>注：</b></font><font color="red" size="3"><i>红色斜体为待筛选</i></font>，<font color="blue" size="3">蓝色为已选上</font></span></div></td></tr><tr><td width="7.5%"><span class="time">时间段</span></td><td width="5%"><span class="time">节次</span></td><td width="12.5%"><span class="time">星期一</span></td><td width="12.5%"><span class="time">星期二</span></td><td width="12.5%"><span class="time">星期三</span></td><td width="12.5%"><span class="time">星期四</span></td><td width="12.5%"><span class="time">星期五</span></td><td width="12.5%"><span class="time">星期六</span></td><td width="12.5%"><span class="time">星期日</span></td></tr><tr><td rowspan="4"><span class="time">上午</span></td><td><span class="festival">1</span></td><td rowspan="2" id="1-1" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">大学英语3★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (1-2节)1-16周,18-19周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理8-407B-语音室</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 汪雅</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-21900016-2011110308-2</font></p></div></td><td rowspan="2" id="2-1" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">数字电子技术★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (1-2节)1-16周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理8-308</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 刘虹,王贤凌</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-23060025-2014113307-1</font></p></div></td><td rowspan="2" id="3-1" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">大学英语3★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (1-2节)1-16周,18-19周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理2-303</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 汪雅</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-21900016-2011110308-2</font></p></div></td><td rowspan="2" id="4-1" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">数字电子技术★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (1-2节)1-16周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理8-207</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 王贤凌,刘虹</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-23060025-2014113307-1</font></p></div></td><td rowspan="2" id="5-1" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">大学物理实验Ⅰ（下）☆</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (1-2节)4-9周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 精工4-407-物理实验室3</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 彭东青</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-21900011-0000000000-16</font></p></div></td><td rowspan="1" id="6-1" class="td_wrap"></td><td rowspan="1" id="7-1" class="td_wrap"></td></tr><tr><td><span class="festival">2</span></td><td rowspan="1" id="6-2" class="td_wrap"></td><td rowspan="1" id="7-2" class="td_wrap"></td></tr><tr><td><span class="festival">3</span></td><td rowspan="2" id="1-3" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路实验☆</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (3-4节)4-15周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 精工3-408-低频电路实验室</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 王尘</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-23060354-2011120601-1</font></p></div></td><td rowspan="2" id="2-3" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">积分变换与复变函数★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (3-4节)1-13周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理9-409</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 司新</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-21900401-2007111006-1</font></p></div></td><td rowspan="2" id="3-3" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">大学物理Ⅰ（下）★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (3-4节)3-16周,18-19周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理2-105</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 李敏</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-21900008-2013110607-1</font></p></div></td><td rowspan="1" id="4-3" class="td_wrap"></td><td rowspan="2" id="5-3" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">大学物理Ⅰ（下）★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (3-4节)3-15周(单),19周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理8-308</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 李敏</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-21900008-2013110607-1</font></p></div></td><td rowspan="1" id="6-3" class="td_wrap"></td><td rowspan="1" id="7-3" class="td_wrap"></td></tr><tr><td><span class="festival">4</span></td><td rowspan="1" id="4-4" class="td_wrap"></td><td rowspan="1" id="6-4" class="td_wrap"></td><td rowspan="1" id="7-4" class="td_wrap"></td></tr><tr><td rowspan="4"><span class="time">下午</span></td><td><span class="festival">5</span></td><td rowspan="2" id="1-5" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">线性代数★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (5-6节)1-16周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理1-104</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 袁玉敏</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-21900045-1986111001-1</font></p></div></td><td rowspan="2" id="2-5" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">马克思主义基本原理概论★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (5-6节)1-16周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理3-205</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 李永根</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-21900153-1999112201-4</font></p></div></td><td rowspan="1" id="3-5" class="td_wrap"></td><td rowspan="2" id="4-5" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">积分变换与复变函数★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (5-6节)1-13周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理1-104</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 司新</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-21900401-2007111006-1</font></p></div></td><td rowspan="2" id="5-5" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (5-6节)1-5周,7-10周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理2-204</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 余长青</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-23060168-2010110612-1</font></p></div></td><td rowspan="1" id="6-5" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">食品安全与日常饮食★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (5-5节)2-12周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 东西部联盟智慧树平台</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 东西部联盟课程10</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-wl660674-1980660310-1</font></p></div></td><td rowspan="1" id="7-5" class="td_wrap"></td></tr><tr><td><span class="festival">6</span></td><td rowspan="1" id="3-6" class="td_wrap"></td><td rowspan="1" id="6-6" class="td_wrap"></td><td rowspan="1" id="7-6" class="td_wrap"></td></tr><tr><td><span class="festival">7</span></td><td rowspan="1" id="1-7" class="td_wrap"></td><td rowspan="2" id="2-7" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (7-8节)6周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理4-504</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 余长青</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-23060168-2010110612-1</font></p></div><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (7-8节)11-14周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理4-105</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 余长青</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-23060168-2010110612-1</font></p></div></td><td rowspan="1" id="3-7" class="td_wrap"></td><td rowspan="2" id="4-7" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (7-8节)1-9周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理2-204</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 余长青</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-23060168-2010110612-1</font></p></div><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (7-8节)10-14周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理4-305</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 余长青</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-23060168-2010110612-1</font></p></div></td><td rowspan="1" id="5-7" class="td_wrap"></td><td rowspan="1" id="6-7" class="td_wrap"></td><td rowspan="1" id="7-7" class="td_wrap"></td></tr><tr><td><span class="festival">8</span></td><td rowspan="1" id="1-8" class="td_wrap"></td><td rowspan="1" id="3-8" class="td_wrap"></td><td rowspan="1" id="5-8" class="td_wrap"></td><td rowspan="1" id="6-8" class="td_wrap"></td><td rowspan="1" id="7-8" class="td_wrap"></td></tr><tr><td rowspan="3"><span class="time">晚上</span></td><td><span class="festival">9</span></td><td rowspan="2" id="1-9" class="td_wrap"><div class="timetable_con text-left"><span class="title"><font color="blue">专业导论与学涯规划指导★</font></span><p><span data-toggle="tooltip" data-placement="top" title="节/周"><font color="blue"><span class="glyphicon glyphicon-time"></span></font></span><font color="blue"> (9-10节)11-16周,18-19周</font></p><p><span data-toggle="tooltip" data-placement="top" title="上课地点"><font color="blue"><span class="glyphicon glyphicon-map-marker"></span></font></span><font color="blue"> 集美校区 明理1-204</font></p><p><span data-toggle="tooltip" data-placement="top" title="教师"><font color="blue"><span class="glyphicon glyphicon-user"></span></font></span><font color="blue"> 袁江南</font></p><p><span data-toggle="tooltip" data-placement="top" title="教学班名称"><font color="blue"><span class="glyphicon glyphicon-home"></span></font></span><font color="blue"> (2017-2018-1)-23330008-2004110602-1</font></p></div></td><td rowspan="1" id="2-9" class="td_wrap"></td><td rowspan="1" id="3-9" class="td_wrap"></td><td rowspan="1" id="4-9" class="td_wrap"></td><td rowspan="1" id="5-9" class="td_wrap"></td><td rowspan="1" id="6-9" class="td_wrap"></td><td rowspan="1" id="7-9" class="td_wrap"></td></tr><tr><td><span class="festival">10</span></td><td rowspan="1" id="2-10" class="td_wrap"></td><td rowspan="1" id="3-10" class="td_wrap"></td><td rowspan="1" id="4-10" class="td_wrap"></td><td rowspan="1" id="5-10" class="td_wrap"></td><td rowspan="1" id="6-10" class="td_wrap"></td><td rowspan="1" id="7-10" class="td_wrap"></td></tr><tr><td><span class="festival">11</span></td><td rowspan="1" id="1-11" class="td_wrap"></td><td rowspan="1" id="2-11" class="td_wrap"></td><td rowspan="1" id="3-11" class="td_wrap"></td><td rowspan="1" id="4-11" class="td_wrap"></td><td rowspan="1" id="5-11" class="td_wrap"></td><td rowspan="1" id="6-11" class="td_wrap"></td><td rowspan="1" id="7-11" class="td_wrap"></td></tr></tbody></table></div>
+	<div class="tab-pane fade" id="table2"><table id="kblist_table" class="table table-hover table-bordered text-center timetable"><tbody><tr><td colspan="4"><div class="timetable_title"><h6 class="pull-left">2017-2018学年第1学期</h6>xxx的课表<h6 class="pull-right">　学号：xxx</h6></div><div><span class="pull-left">★-理论□-课外◆-实践☆-实验</span><span class="pull-right"><font color="red" size="3"><b>注：</b></font><font color="red" size="3"><i>红色斜体为待筛选</i></font>，<font color="blue" size="3">蓝色为已选上</font></span></div></td></tr><tr class="tbody_head"><td>星期</td><td>节次</td><td>课表信息</td></tr></tbody><tbody id="xq_1" style=""><tr><td id="xq_rowspan_1" rowspan="5" width="50"><span class="week">星期一</span></td></tr><tr><td id="jc_1-1-2" rowspan="1"><span class="festival">1-2</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">大学英语3★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-16周,18-19周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理8-407B-语音室</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：汪雅</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-21900016-2011110308-2</font></p></div></td></tr><tr><td id="jc_1-3-4" rowspan="1"><span class="festival">3-4</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路实验☆</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：4-15周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：精工3-408-低频电路实验室</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：王尘</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-23060354-2011120601-1</font></p></div></td></tr><tr><td id="jc_1-5-6" rowspan="1"><span class="festival">5-6</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">线性代数★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-16周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理1-104</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：袁玉敏</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-21900045-1986111001-1</font></p></div></td></tr><tr><td id="jc_1-9-10" rowspan="1"><span class="festival">9-10</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">专业导论与学涯规划指导★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：11-16周,18-19周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理1-204</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：袁江南</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-23330008-2004110602-1</font></p></div></td></tr></tbody><tbody id="xq_2" style=""><tr><td id="xq_rowspan_2" rowspan="6" width="50"><span class="week">星期二</span></td></tr><tr><td id="jc_2-1-2" rowspan="1"><span class="festival">1-2</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">数字电子技术★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-16周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理8-308</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：刘虹,王贤凌</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-23060025-2014113307-1</font></p></div></td></tr><tr><td id="jc_2-3-4" rowspan="1"><span class="festival">3-4</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">积分变换与复变函数★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-13周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理9-409</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：司新</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-21900401-2007111006-1</font></p></div></td></tr><tr><td id="jc_2-5-6" rowspan="1"><span class="festival">5-6</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">马克思主义基本原理概论★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-16周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理3-205</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：李永根</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-21900153-1999112201-4</font></p></div></td></tr><tr><td id="jc_2-7-8" rowspan="2"><span class="festival">7-8</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：6周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理4-504</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：余长青</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-23060168-2010110612-1</font></p></div></td></tr><tr><td><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：11-14周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理4-105</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：余长青</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-23060168-2010110612-1</font></p></div></td></tr></tbody><tbody id="xq_3" style=""><tr><td id="xq_rowspan_3" rowspan="3" width="50"><span class="week">星期三</span></td></tr><tr><td id="jc_3-1-2" rowspan="1"><span class="festival">1-2</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">大学英语3★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-16周,18-19周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理2-303</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：汪雅</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-21900016-2011110308-2</font></p></div></td></tr><tr><td id="jc_3-3-4" rowspan="1"><span class="festival">3-4</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">大学物理Ⅰ（下）★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：3-16周,18-19周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理2-105</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：李敏</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-21900008-2013110607-1</font></p></div></td></tr></tbody><tbody id="xq_4" style=""><tr><td id="xq_rowspan_4" rowspan="5" width="50"><span class="week">星期四</span></td></tr><tr><td id="jc_4-1-2" rowspan="1"><span class="festival">1-2</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">数字电子技术★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-16周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理8-207</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：王贤凌,刘虹</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-23060025-2014113307-1</font></p></div></td></tr><tr><td id="jc_4-5-6" rowspan="1"><span class="festival">5-6</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">积分变换与复变函数★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-13周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理1-104</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：司新</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-21900401-2007111006-1</font></p></div></td></tr><tr><td id="jc_4-7-8" rowspan="2"><span class="festival">7-8</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-9周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理2-204</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：余长青</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-23060168-2010110612-1</font></p></div></td></tr><tr><td><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：10-14周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理4-305</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：余长青</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-23060168-2010110612-1</font></p></div></td></tr></tbody><tbody id="xq_5" style=""><tr><td id="xq_rowspan_5" rowspan="4" width="50"><span class="week">星期五</span></td></tr><tr><td id="jc_5-1-2" rowspan="1"><span class="festival">1-2</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">大学物理实验Ⅰ（下）☆</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：4-9周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：精工4-407-物理实验室3</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：彭东青</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-21900011-0000000000-16</font></p></div></td></tr><tr><td id="jc_5-3-4" rowspan="1"><span class="festival">3-4</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">大学物理Ⅰ（下）★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：3-15周(单),19周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理8-308</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：李敏</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-21900008-2013110607-1</font></p></div></td></tr><tr><td id="jc_5-5-6" rowspan="1"><span class="festival">5-6</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">低频电子线路★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：1-5周,7-10周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：明理2-204</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：余长青</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-23060168-2010110612-1</font></p></div></td></tr></tbody><tbody id="xq_6" style=""><tr><td id="xq_rowspan_6" rowspan="2" width="50"><span class="week">星期六</span></td></tr><tr><td id="jc_6-5-5" rowspan="1"><span class="festival">5-5</span></td><td><div class="timetable_con text-left"><span class="title"><font color="blue">食品安全与日常饮食★</font></span><p><font color="blue"><span class="glyphicon glyphicon-calendar"></span> 周数：2-12周</font><font color="blue"><span class="glyphicon glyphicon-tower"></span> 校区：集美校区<span class="glyphicon glyphicon-map-marker"></span> 上课地点：东西部联盟智慧树平台</font><font color="blue"><span class="glyphicon glyphicon-user"></span> 教师：东西部联盟课程10</font><font color="blue"><span class="glyphicon glyphicon-home"></span> 教学班：(2017-2018-1)-wl660674-1980660310-1</font></p></div></td></tr></tbody><tbody id="xq_7" style="display: none"><tr><td id="xq_rowspan_7" rowspan="0" width="50"><span class="week">星期日</span></td></tr></tbody></table></div>
+</div>
+
+<div class="row sl_aff_btn" id="searchBox1" style="display:none;">
+	<div class="col-sm-12">
+		<button type="button" class="btn btn-primary btn-sm" id="btn_dc">导出</button>
+	</div>
+</div>
+<!-- table-start  -->
+<div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="gbox_sycjlrtabGrid" dir="ltr" style="width: 1348px; display: none;"><div class="ui-widget-overlay jqgrid-overlay" id="lui_sycjlrtabGrid"></div><div class="loading ui-state-default ui-state-active" id="load_sycjlrtabGrid" style="display: none;">正在请求数据...</div><div class="ui-jqgrid-view" id="gview_sycjlrtabGrid" style="width: 1348px;"><div class="ui-jqgrid-titlebar ui-jqgrid-caption ui-widget-header ui-corner-top ui-helper-clearfix"><span class="ui-jqgrid-title">实验课表</span></div><div class="ui-state-default ui-jqgrid-hdiv" style="width: 1356px;"><div class="ui-jqgrid-hbox"><table class="ui-jqgrid-htable" style="width:1630px" role="grid" aria-labelledby="gbox_sycjlrtabGrid" cellspacing="0" cellpadding="0" border="0"><thead><tr class="ui-jqgrid-labels ui-sortable" role="rowheader"><th id="sycjlrtabGrid_xmz_id" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px; display: none;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_xmz_id" class="ui-jqgrid-sortable">ID<span class="s-ico" style=""><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_xnm" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 100px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_xnm" class="ui-jqgrid-sortable">学年<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_xqm" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 80px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_xqm" class="ui-jqgrid-sortable">学期<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_xh" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 100px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_xh" class="ui-jqgrid-sortable">学号<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_xm" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 100px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_xm" class="ui-jqgrid-sortable">姓名<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_kch" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 100px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_kch" class="ui-jqgrid-sortable">课程号<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_kcmc" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 100px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_kcmc" class="ui-jqgrid-sortable">课程名称<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_xmmc" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 150px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_xmmc" class="ui-jqgrid-sortable">实验项目名称<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_syfzmc" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 150px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_syfzmc" class="ui-jqgrid-sortable">实验分组名称<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_xqjmc" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 80px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_xqjmc" class="ui-jqgrid-sortable">星期<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_jc" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 100px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_jc" class="ui-jqgrid-sortable">节次<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_zcd" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 100px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_zcd" class="ui-jqgrid-sortable">周次<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_syfj" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 150px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_syfj" class="ui-jqgrid-sortable">实验房间<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_dycd" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 120px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_dycd" class="ui-jqgrid-sortable">实验房间对应场地<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_xq" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 100px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_xq" class="ui-jqgrid-sortable">场地校区<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="sycjlrtabGrid_jsxm" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr ui-sortable-handle" style="width: 100px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_sycjlrtabGrid_jsxm" class="ui-jqgrid-sortable">实验人员<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th></tr></thead></table></div></div><div class="ui-jqgrid-bdiv" style="height: auto; width: 1356px;"><div style="position:relative;"><div></div><table id="sycjlrtabGrid" tabindex="0" cellspacing="0" cellpadding="0" border="0" role="grid" aria-multiselectable="false" aria-labelledby="gbox_sycjlrtabGrid" class="ui-jqgrid-btable" style="width: 1630px;"><tbody><tr class="jqgfirstrow" role="row" style="height:auto"><td role="gridcell" style="height:0px;width:150px;display:none;"></td><td role="gridcell" style="height:0px;width:100px;"></td><td role="gridcell" style="height:0px;width:80px;"></td><td role="gridcell" style="height:0px;width:100px;"></td><td role="gridcell" style="height:0px;width:100px;"></td><td role="gridcell" style="height:0px;width:100px;"></td><td role="gridcell" style="height:0px;width:100px;"></td><td role="gridcell" style="height:0px;width:150px;"></td><td role="gridcell" style="height:0px;width:150px;"></td><td role="gridcell" style="height:0px;width:80px;"></td><td role="gridcell" style="height:0px;width:100px;"></td><td role="gridcell" style="height:0px;width:100px;"></td><td role="gridcell" style="height:0px;width:150px;"></td><td role="gridcell" style="height:0px;width:120px;"></td><td role="gridcell" style="height:0px;width:100px;"></td><td role="gridcell" style="height:0px;width:100px;"></td></tr><tr name="norecords" class="emptyrow" align="center" valign="middle" style="height:80px;"><td colspan="16" align="center" valign="middle" style="line-height:80px;text-align: center;font-size:12px;">没有符合条件记录!</td></tr><tr></tr></tbody></table></div></div></div><div class="ui-jqgrid-resize-mark" id="rs_msycjlrtabGrid">&nbsp;</div><div id="sycjlrpager" class="ui-state-default ui-jqgrid-pager ui-corner-bottom" dir="ltr" style="width: 1348px;"><div id="pg_sycjlrpager" class="ui-pager-control" role="group"><table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table" style="width:100%;table-layout:fixed;height:100%;" role="row"><tbody><tr><td id="sycjlrpager_left" align="left"><table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table navtable" style="float:left;table-layout:auto;"><tbody><tr></tr></tbody></table></td><td id="sycjlrpager_center" align="center" style="white-space: pre; width: 294px;"><table cellspacing="0" cellpadding="0" border="0" style="table-layout:auto;" class="ui-pg-table"><tbody><tr><td id="first_sycjlrpager" class="ui-pg-button ui-corner-all ui-state-disabled"><span class="ui-icon glyphicon glyphicon-step-backward"></span></td><td id="prev_sycjlrpager" class="ui-pg-button ui-corner-all ui-state-disabled"><span class="ui-icon glyphicon glyphicon-chevron-left"></span></td><td class="ui-pg-button ui-state-disabled" style="width:4px;"><span class="ui-separator"></span></td><td dir="ltr"> <input class="ui-pg-input" name="showCount" type="text" size="2" maxlength="7" value="0" role="textbox"> 共 <span id="sp_1_sycjlrpager">0</span> 页</td><td class="ui-pg-button ui-state-disabled" style="width:4px;"><span class="ui-separator"></span></td><td id="next_sycjlrpager" class="ui-pg-button ui-corner-all"><span class="ui-icon glyphicon glyphicon-chevron-right"></span></td><td id="last_sycjlrpager" class="ui-pg-button ui-corner-all"><span class="ui-icon glyphicon glyphicon-step-forward"></span></td><td dir="ltr"><select class="ui-pg-selbox" name="currentPage" role="listbox"><option role="option" value="15" selected="selected">15</option><option role="option" value="20">20</option><option role="option" value="30">30</option><option role="option" value="50">50</option><option role="option" value="70">70</option><option role="option" value="90">90</option><option role="option" value="100">100</option><option role="option" value="150">150</option><option role="option" value="300">300</option><option role="option" value="500">500</option><option role="option" value="800">800</option><option role="option" value="1000">1000</option><option role="option" value="1500">1500</option><option role="option" value="2000">2000</option><option role="option" value="2500">2500</option><option role="option" value="5000">5000</option></select></td></tr></tbody></table></td><td id="sycjlrpager_right" align="right"><div dir="ltr" style="text-align:right" class="ui-paging-info">无数据显示</div></td></tr></tbody></table></div></div></div>
+
+<!-- table-end  -->
+
+				
+	
+
+<!--jQuery.jqGrid -->
+<link rel="stylesheet" type="text/css" href="/zftal-ui-v5-1.0.2/assets/plugins/jqGrid/css/jquery.jqgrid.css?ver=20180531">
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/jqGrid/jquery.jqgrid.src-min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/jqGrid/jquery.jqgrid.contact-min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/jqGrid/lang/zh_CN.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/jwglxt/js/plugins/jqGrid4.6/jquery.jqgrid.settings.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/jwglxt/js/plugins/jqGrid4.6/jquery.jqGrid-min.js?ver=20180531" charset="utf-8"></script>
+<!--jQuery.validation -->
+<link rel="stylesheet" type="text/css" href="/zftal-ui-v5-1.0.2/assets/plugins/validation/css/jquery.validate-min.css?ver=20180531">
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/validation/js/jquery.validate-min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/validation/js/jquery.validate.contact-min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/validation/js/jquery.validate.methods.contact-min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/validation/lang/zh_CN-min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript">
+	jQuery(function($){
+		$('[data-toggle*="validation"]').trigger("validation");
+	});
+</script>
+
+<link rel="stylesheet" type="text/css" href="/zftal-ui-v5-1.0.2/assets/plugins/backdrop/css/jquery.backdrop-1.0.0.css?ver=20180531">
+<script type="text/javascript" src="/zftal-ui-v5-1.0.2/assets/plugins/backdrop/jquery.backdrop-min.js?ver=20180531" charset="utf-8"></script>
+<script type="text/javascript" src="/jwglxt/js/comp/jwglxt/pkgl/kbcx/xskbcx.js?ver=20180531"></script>
+<script type="text/javascript">
+if(language=="en_US"){
+	//$("#topButton").html("Curriculum Query for Students");
+	$("#ajaxForm1").hide();
+	$("#ajaxForm2").show();
+	$("#tb").hide();
+}else{
+	$("#ajaxForm2").hide();
+	$("#ajaxForm1").show();
+	$("#tb").show();
+}
+
+</script>
+
+			</div>
+		</div>
+	</div><div class="ui-widget ui-widget-content ui-corner-all ui-jqdialog" id="alertmod_sycjlrtabGrid" dir="ltr" tabindex="-1" role="dialog" aria-labelledby="alerthd_sycjlrtabGrid" aria-hidden="true" style="width: 200px; height: auto; z-index: 950; overflow: hidden; top: 377px; left: 672px;"><div class="ui-jqdialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" id="alerthd_sycjlrtabGrid" style="cursor: move;"><span class="ui-jqdialog-title" style="float: left;">注意</span><a class="ui-jqdialog-titlebar-close ui-corner-all" style="right: 0.3em;"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-jqdialog-content ui-widget-content" id="alertcnt_sycjlrtabGrid"><div>请选择记录</div><span tabindex="0"><span tabindex="-1" id="jqg_alrt"></span></span></div><div class="jqResize ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>
+	<!-- footer -->
+	
+
+<!-- footer --> 
+<div id="footerID" class="footer">
+	<p>版权所有© Copyright 1999-2017  正方软件股份有限公司　　中国·杭州西湖区紫霞街176号 互联网创新创业园2号301</p>
+</div>
+<!-- footer-end -->
+	<!-- footer-end -->
+
+<script type="text/javascript">
+	jQuery(function($) {	
+		if ($("#navbar-tabs").length > 0) {
+			$("#navbar-tabs li:eq(0) a").tab('show');
+		}
+		
+		setMinheight();
+		
+		$('#yhgnPage').resize(function(){
+			var minHeight  = $(this).data('min-height');
+			var innerHeight =  $('#innerContainer').outerHeight(true);
+			//console.log("minHeight:" + minHeight + ",innerHeight:" + innerHeight);
+			$(this).css('min-height', Math.max(minHeight,innerHeight));
+		});
+		
+		function setMinheight(){
+			//计算grid页面高度
+			var docuemntHeight = $(document).height();
+			var topHeight = $('header').height();
+			var footerHeight = $('.footer').height();
+			var containerHeight = docuemntHeight-topHeight-footerHeight-60;
+			$('#yhgnPage').css('min-height',containerHeight).data('min-height',containerHeight);
+		}
+	});
+	//加载title名称，根据系统内置表设置，取菜单名称或者系统名称
+	jQuery(document).attr("title",'学生课表查询');
+</script>
+
+<iframe id="blockbyte-bs-sidebar" data-pos="right"></iframe><div id="blockbyte-bs-indicator" class="blockbyte-bs-fullHeight blockbyte-bs-hover" style="width: 20px; height: 100%; top: 0%;"></div><div class="widget-backdrop in" style="display: none; width: 631px; height: 3323px; top: 290px; left: 20px; z-index: 1045;"></div><div class="widget-backdrop-loading" style="display: none; width: 631px; height: 3323px; top: 290px; left: 20px; z-index: 1046;"><div class="image header smaller lighter" style="margin-top: 235px;"><i class="icon-spinner icon-spin orange  bigger-160 "></i></div><div class="msg">加载中...</div></div></body></html>
