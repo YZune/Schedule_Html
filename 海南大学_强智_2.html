@@ -1,34 +1,34 @@
-
-
-  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 
 <head id="headerid1">
 	<base target='_self'>
-	<title>学期理论课表</title>	
+	<title>学期理论课表</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="湖南强智科技教务系统">
 	<meta http-equiv="description" content="湖南强智科技教务系统">
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
-<script type="text/javascript" src="/jsxsd/js/jquery-min.js" language="javascript" ></script>
-<script type="text/javascript" src="/jsxsd/js/common.js" language="javascript" ></script>
-<script type="text/javascript" src="/jsxsd/js/iepngfix_tilebg.js" language="javascript" ></script>
-<link href="/jsxsd/framework/images/common.css" rel="stylesheet" type="text/css" />
-<link href="/jsxsd/framework/images/blue.css" rel="stylesheet" type="text/css" id="link_theme" />
-<link href="/jsxsd/framework/images/workstation.css" rel="stylesheet" type="text/css" /> 
+	<script type="text/javascript" src="/jsxsd/js/jquery-min.js" language="javascript"></script>
+	<script type="text/javascript" src="/jsxsd/js/common.js" language="javascript"></script>
+	<script type="text/javascript" src="/jsxsd/js/iepngfix_tilebg.js" language="javascript"></script>
+	<link href="/jsxsd/framework/images/common.css" rel="stylesheet" type="text/css" />
+	<link href="/jsxsd/framework/images/blue.css" rel="stylesheet" type="text/css" id="link_theme" />
+	<link href="/jsxsd/framework/images/workstation.css" rel="stylesheet" type="text/css" />
 </head>
 <iframe id="notSession" name="notSession" style="display: none;" src=""></iframe>
 <script type="text/javascript">
-jQuery(document).ready(function(){
-	window.setInterval(function(){
-		 document.getElementById("notSession").src = "/jsxsd/framework/blankPage.jsp";
-	 }, 1000 * 60 * 10);
-});
+	jQuery(document).ready(function () {
+		window.setInterval(function () {
+			document.getElementById("notSession").src = "/jsxsd/framework/blankPage.jsp";
+		}, 1000 * 60 * 10);
+	});
 </script>
+
 <body>
 
 
@@ -38,632 +38,641 @@ jQuery(document).ready(function(){
 
 
 
-<script>
-function opengld(){
-	if("1"!='2'){
-		alert("非教师不能进行切换");
-		return;
-	}
-	var height = $(window).height();
-	var width = $(window).width();
-	if(parseInt(height)<750){
-		document.getElementById("view").value = "1";
-	}else{
-		document.getElementById("view").value = "0";
-	}
-	//取得userid
-	var userid = 'xxx';
-	var userpsw = 'xxx';
-	//取得userid
-	document.getElementById("ticket").value = userid+"#"+userpsw;
-	document.getElementById("useraccount").value = userid;
-	document.getElementById("loginForm1").submit();
-}
-function LogoutGLD(){
-	var userid = 'xxx';
-	document.getElementById("loginForm1").action = "null/Logon.do?method=logoutFromJsxsd";
-	document.getElementById("useraccount").value = userid;
-	document.getElementById("loginForm1").submit();
-}	
+	<script>
+		function opengld() {
+			if ("1" != '2') {
+				alert("非教师不能进行切换");
+				return;
+			}
+			var height = $(window).height();
+			var width = $(window).width();
+			if (parseInt(height) < 750) {
+				document.getElementById("view").value = "1";
+			} else {
+				document.getElementById("view").value = "0";
+			}
+			//取得userid
+			var userid = 'xxx';
+			var userpsw = 'xxx';
+			//取得userid
+			document.getElementById("ticket").value = userid + "#" + userpsw;
+			document.getElementById("useraccount").value = userid;
+			document.getElementById("loginForm1").submit();
+		}
+		function LogoutGLD() {
+			var userid = 'xxx';
+			document.getElementById("loginForm1").action = "null/Logon.do?method=logoutFromJsxsd";
+			document.getElementById("useraccount").value = userid;
+			document.getElementById("loginForm1").submit();
+		}
 
-</script>	
-<div class="Nsb_pw">
-  <div class="Nsb_top">
-  	<form action = "null/Logon.do?method=logonFromJsxsd"  method="post" id="loginForm1" name="loginForm1">
-		<input type = "hidden" id="view" name="view" />
-		<input type = "hidden" id="useraccount" name="useraccount" />
-		<input type = "hidden" id="ticket" name="ticket" />
-	</form>
-    <div class="Nsb_top_logo"><table border="0" cellpadding="0" cellspacing="0"><tr><td height="75" valign="middle"><img style="display:;" id="imgLogo" src="/jsxsd/framework/images/index_logo.gif" /></td></tr></table></div>
-    <div class="Nsb_top_menu">        
-        <div id="Top1_divLoginName" class="Nsb_top_menu_nc" style="color: #000000;">姓名(xxx)</div>
-       
-        <ul>
-            <li><a id="TopUserSetting" info="个人设置" href="#" class="Nsb_top_menu_id"><img src="/jsxsd/framework/images/Nsb_top_p1.jpg" id="Top1_imgTopSmallUserPhoto" /></a></li>
-            <span></span>
-                          
-            
-            <li><a id="TopTheme" info="切换主题" href="#" class="Nsb_top_menu_style" onclick="changeDisplay('divTopTheme')"></a></li>
-            <span id="Top1_LBackManageSpliter"></span>
-            <span id="Top1_LExitSpliter"></span>
-            <li id="Top1_LBackManage">
-            	<a info="个人设置" href="/jsxsd/grsz/grsz_xggrxx.do?Ves632DSdyV=NEW_XSD_WDZM" class="Nsb_top_menu_options"></a>
-            </li>
-             
-        	 	<li id="Top1_LExit"><a info="退出" href="javascript:Logout('/jsxsd');"   class="Nsb_top_menu_exit"></a></li>
-        	 
-            
-            
-        </ul>            
-     </div>   
-     <div id="divTopTheme" group="topDiv" style="display:none;z-index:10000">      
-        <div class="Nsb_top_c Nsb_top_c3">
-          <ul>
-            <li id="theme_blue" theme="blue" index="1" class="Nsb_top_c3_11" onclick="javascript:changeTheme('/jsxsd','blue',this);"></li>
-            <li id="theme_green" theme="green" index="2" class="Nsb_top_c3_2"  onclick="javascript:changeTheme('/jsxsd','green',this);"></li>
-            <li id="theme_orange" theme="orange" index="3" class="Nsb_top_c3_3" onclick="javascript:changeTheme('/jsxsd','orange',this);"></li>
-            <li id="theme_red" theme="red" index="4" class="Nsb_top_c3_4"  onclick="javascript:changeTheme('/jsxsd','red',this);"></li>
-            <li id="theme_purple" theme="purple" index="5" class="Nsb_top_c3_5" onclick="javascript:changeTheme('/jsxsd','purple',this);"></li>
-            <li id="theme_gray" theme="gray" index="6" class="Nsb_top_c3_6"  onclick="javascript:changeTheme('/jsxsd','gray',this);"></li>
-          </ul>
-        </div>
-     </div>
-   </div>
-</div>
-<div class="Nsb_menu_pw">
-  <div class="Nsb_pw">
-    <div id="divFirstMenuClass" class="Nsb_menu menu_cn">
-      <ul>         
-         <li class="Nsb_menu_li_now" title="首页">
-         	<a class="Nsb_menu_li_h" id="homepage" href="/jsxsd/framework/xsMain.jsp"><span></span></a>
-         </li>
-         
-         	<li title="我的桌面">
-         		<a id="calender_user_schedule" href="/jsxsd/jxzl/jxzl_query?Ves632DSdyV=NEW_XSD_WDZM">我的桌面</a>
-         	</li>
-         
-         	<li title="学籍成绩">
-         		<a id="calender_user_schedule" href="/jsxsd/xsxj/xjxxgl.do?Ves632DSdyV=NEW_XSD_XJCJ">学籍成绩</a>
-         	</li>
-         
-         	<li title="培养管理">
-         		<a id="calender_user_schedule" href="/jsxsd/pyfa/topyfamx?Ves632DSdyV=NEW_XSD_PYGL">培养管理</a>
-         	</li>
-         
-         	<li title="考试报名">
-         		<a id="calender_user_schedule" href="/jsxsd/xsks/xsksap_query?Ves632DSdyV=NEW_XSD_KSBM">考试报名</a>
-         	</li>
-         
-         	<li title="实践环节">
-         		<a id="calender_user_schedule" href="/jsxsd/view/syjx/syyy_find.jsp?Ves632DSdyV=NEW_XSD_SJHJ">实践环节</a>
-         	</li>
-         
-         	<li title="教学评价">
-         		<a id="calender_user_schedule" href="/jsxsd/xspj/xspj_find.do?Ves632DSdyV=NEW_XSD_JXPJ">教学评价</a>
-         	</li>
-         
-         	<li title="交流申请">
-         		<a id="calender_user_schedule" href="/jsxsd/jlsgl/jlxm_find.do?Ves632DSdyV=NEW_XSD_JLSQ">交流申请</a>
-         	</li>
-         
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="Nsb_pw">
-	
+	</script>
+	<div class="Nsb_pw">
+		<div class="Nsb_top">
+			<form action="null/Logon.do?method=logonFromJsxsd" method="post" id="loginForm1" name="loginForm1">
+				<input type="hidden" id="view" name="view" />
+				<input type="hidden" id="useraccount" name="useraccount" />
+				<input type="hidden" id="ticket" name="ticket" />
+			</form>
+			<div class="Nsb_top_logo">
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td height="75" valign="middle"><img style="display:;" id="imgLogo" src="/jsxsd/framework/images/index_logo.gif" /></td>
+					</tr>
+				</table>
+			</div>
+			<div class="Nsb_top_menu">
+				<div id="Top1_divLoginName" class="Nsb_top_menu_nc" style="color: #000000;">姓名(xxx)</div>
+
+				<ul>
+					<li><a id="TopUserSetting" info="个人设置" href="#" class="Nsb_top_menu_id"><img src="/jsxsd/framework/images/Nsb_top_p1.jpg"
+							 id="Top1_imgTopSmallUserPhoto" /></a></li>
+					<span></span>
+
+
+					<li><a id="TopTheme" info="切换主题" href="#" class="Nsb_top_menu_style" onclick="changeDisplay('divTopTheme')"></a></li>
+					<span id="Top1_LBackManageSpliter"></span>
+					<span id="Top1_LExitSpliter"></span>
+					<li id="Top1_LBackManage">
+						<a info="个人设置" href="/jsxsd/grsz/grsz_xggrxx.do?Ves632DSdyV=NEW_XSD_WDZM" class="Nsb_top_menu_options"></a>
+					</li>
+
+					<li id="Top1_LExit"><a info="退出" href="javascript:Logout('/jsxsd');" class="Nsb_top_menu_exit"></a></li>
 
 
 
+				</ul>
+			</div>
+			<div id="divTopTheme" group="topDiv" style="display:none;z-index:10000">
+				<div class="Nsb_top_c Nsb_top_c3">
+					<ul>
+						<li id="theme_blue" theme="blue" index="1" class="Nsb_top_c3_11" onclick="javascript:changeTheme('/jsxsd','blue',this);"></li>
+						<li id="theme_green" theme="green" index="2" class="Nsb_top_c3_2" onclick="javascript:changeTheme('/jsxsd','green',this);"></li>
+						<li id="theme_orange" theme="orange" index="3" class="Nsb_top_c3_3" onclick="javascript:changeTheme('/jsxsd','orange',this);"></li>
+						<li id="theme_red" theme="red" index="4" class="Nsb_top_c3_4" onclick="javascript:changeTheme('/jsxsd','red',this);"></li>
+						<li id="theme_purple" theme="purple" index="5" class="Nsb_top_c3_5" onclick="javascript:changeTheme('/jsxsd','purple',this);"></li>
+						<li id="theme_gray" theme="gray" index="6" class="Nsb_top_c3_6" onclick="javascript:changeTheme('/jsxsd','gray',this);"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="Nsb_menu_pw">
+		<div class="Nsb_pw">
+			<div id="divFirstMenuClass" class="Nsb_menu menu_cn">
+				<ul>
+					<li class="Nsb_menu_li_now" title="首页">
+						<a class="Nsb_menu_li_h" id="homepage" href="/jsxsd/framework/xsMain.jsp"><span></span></a>
+					</li>
+
+					<li title="我的桌面">
+						<a id="calender_user_schedule" href="/jsxsd/jxzl/jxzl_query?Ves632DSdyV=NEW_XSD_WDZM">我的桌面</a>
+					</li>
+
+					<li title="学籍成绩">
+						<a id="calender_user_schedule" href="/jsxsd/xsxj/xjxxgl.do?Ves632DSdyV=NEW_XSD_XJCJ">学籍成绩</a>
+					</li>
+
+					<li title="培养管理">
+						<a id="calender_user_schedule" href="/jsxsd/pyfa/topyfamx?Ves632DSdyV=NEW_XSD_PYGL">培养管理</a>
+					</li>
+
+					<li title="考试报名">
+						<a id="calender_user_schedule" href="/jsxsd/xsks/xsksap_query?Ves632DSdyV=NEW_XSD_KSBM">考试报名</a>
+					</li>
+
+					<li title="实践环节">
+						<a id="calender_user_schedule" href="/jsxsd/view/syjx/syyy_find.jsp?Ves632DSdyV=NEW_XSD_SJHJ">实践环节</a>
+					</li>
+
+					<li title="教学评价">
+						<a id="calender_user_schedule" href="/jsxsd/xspj/xspj_find.do?Ves632DSdyV=NEW_XSD_JXPJ">教学评价</a>
+					</li>
+
+					<li title="交流申请">
+						<a id="calender_user_schedule" href="/jsxsd/jlsgl/jlxm_find.do?Ves632DSdyV=NEW_XSD_JLSQ">交流申请</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="Nsb_pw">
 
 
 
-  
-<div id="LeftMenu1_divChildMenu" class="Nsb_layout_l Nsb_l_list">
-	<div class="Nsb_l_list_top"></div>
-	
+
+
+
+
+
+		<div id="LeftMenu1_divChildMenu" class="Nsb_layout_l Nsb_l_list">
+			<div class="Nsb_l_list_top"></div>
+
 			<h4 class="exam_user_exam">培养方案</h4>
-			<ul>			
-	
-				<li><a  href="/jsxsd/pyfa/pyfa_query">执行计划</a></li>
-	
-				<li><a  href="/jsxsd/pyfa/topyfamx">培养方案明细</a></li>
-	
+			<ul>
+
+				<li><a href="/jsxsd/pyfa/pyfa_query">执行计划</a></li>
+
+				<li><a href="/jsxsd/pyfa/topyfamx">培养方案明细</a></li>
+
 			</ul>
-	
+
 			<h4 class="exam_user_exam">我的课表</h4>
-			<ul>			
-	
+			<ul>
+
 				<li><a class='Nsb_l_list_now' href="/jsxsd/xskb/xskb_list.do">学期理论课表</a></li>
-	
-				<li><a  href="/jsxsd/syjx/toXskb.do">实验课表查询</a></li>
-	
+
+				<li><a href="/jsxsd/syjx/toXskb.do">实验课表查询</a></li>
+
 			</ul>
-	
+
 			<h4 class="exam_user_exam">选课管理</h4>
-			<ul>			
-	
-				<li><a  href="/jsxsd/xsxk/xklc_list">学生选课中心</a></li>
-	
-				<li><a  href="/jsxsd/xkgl/skjhQuery.do">教学进度查询</a></li>
-	
+			<ul>
+
+				<li><a href="/jsxsd/xsxk/xklc_list">学生选课中心</a></li>
+
+				<li><a href="/jsxsd/xkgl/skjhQuery.do">教学进度查询</a></li>
+
 			</ul>
-	
+
 			<h4 class="exam_user_exam">教材管理</h4>
-			<ul>			
-	
-				<li><a  href="/jsxsd/xsjc/xsjc.do">教材账目信息</a></li>
-	
-				<li><a  href="/jsxsd/xsjc/showXsjc">学生教材确认</a></li>
-	
+			<ul>
+
+				<li><a href="/jsxsd/xsjc/xsjc.do">教材账目信息</a></li>
+
+				<li><a href="/jsxsd/xsjc/showXsjc">学生教材确认</a></li>
+
 			</ul>
-	
+
 			<h4 class="exam_user_exam">辅修管理</h4>
-			<ul>			
-	
-				<li><a  href="/jsxsd/fxgl/fxbmxx_query">辅修报名</a></li>
-	
+			<ul>
+
+				<li><a href="/jsxsd/fxgl/fxbmxx_query">辅修报名</a></li>
+
 			</ul>
-	
-</div>
-<div class="Nsb_layout_r">
-<iframe style="display:none;" name="ifrmPrint" id="ifrmPrint"></iframe>
-<form action="" name="FormPrint" id="FormPrint" method="post" target="ifrmPrint">
-</form>
- <form action="" name="Form1" id="Form1" method="post" target="_self">
- <input type="hidden" name="cj0701id" id="cj0701id" value=""/>
-        <div class="Nsb_r_title"><a href="/jsxsd/framework/main.jsp"">首页</a> » 我的课表 » 学期理论课表</div>
+
+		</div>
+		<div class="Nsb_layout_r">
+			<iframe style="display:none;" name="ifrmPrint" id="ifrmPrint"></iframe>
+			<form action="" name="FormPrint" id="FormPrint" method="post" target="ifrmPrint">
+			</form>
+			<form action="" name="Form1" id="Form1" method="post" target="_self">
+				<input type="hidden" name="cj0701id" id="cj0701id" value="" />
+				<div class="Nsb_r_title"><a href="/jsxsd/framework/main.jsp" ">首页</a> » 我的课表 » 学期理论课表</div>
         <div>
         	
-        	周次：<select name="zc" id="zc" onchange="javascript:document.getElementById('Form1').submit();" >
-		 <option value="">(全部)</option>	
+        	周次：<select name="zc " id="zc " onchange="javascript:document.getElementById( 'Form1').submit(); " >
+		 <option value=" ">(全部)</option>	
 		
-		    <option value="1"  >第1周</option>
+		    <option value="1 "  >第1周</option>
 		    
-		    <option value="2"  >第2周</option>
+		    <option value="2 "  >第2周</option>
 		    
-		    <option value="3"  >第3周</option>
+		    <option value="3 "  >第3周</option>
 		    
-		    <option value="4"  >第4周</option>
+		    <option value="4 "  >第4周</option>
 		    
-		    <option value="5"  >第5周</option>
+		    <option value="5 "  >第5周</option>
 		    
-		    <option value="6"  >第6周</option>
+		    <option value="6 "  >第6周</option>
 		    
-		    <option value="7"  >第7周</option>
+		    <option value="7 "  >第7周</option>
 		    
-		    <option value="8"  >第8周</option>
+		    <option value="8 "  >第8周</option>
 		    
-		    <option value="9"  >第9周</option>
+		    <option value="9 "  >第9周</option>
 		    
-		    <option value="10"  >第10周</option>
+		    <option value="10 "  >第10周</option>
 		    
-		    <option value="11"  >第11周</option>
+		    <option value="11 "  >第11周</option>
 		    
-		    <option value="12"  >第12周</option>
+		    <option value="12 "  >第12周</option>
 		    
-		    <option value="13"  >第13周</option>
+		    <option value="13 "  >第13周</option>
 		    
-		    <option value="14"  >第14周</option>
+		    <option value="14 "  >第14周</option>
 		    
-		    <option value="15"  >第15周</option>
+		    <option value="15 "  >第15周</option>
 		    
-		    <option value="16"  >第16周</option>
+		    <option value="16 "  >第16周</option>
 		    
-		    <option value="17"  >第17周</option>
+		    <option value="17 "  >第17周</option>
 		    
-		    <option value="18"  >第18周</option>
+		    <option value="18 "  >第18周</option>
 		    
-		    <option value="19"  >第19周</option>
+		    <option value="19 "  >第19周</option>
 		    
-		    <option value="20"  >第20周</option>
+		    <option value="20 "  >第20周</option>
 		    
-		    <option value="21"  >第21周</option>
+		    <option value="21 "  >第21周</option>
 		    
-		    <option value="22"  >第22周</option>
+		    <option value="22 "  >第22周</option>
 		    
-		    <option value="23"  >第23周</option>
+		    <option value="23 "  >第23周</option>
 		    
-		    <option value="24"  >第24周</option>
+		    <option value="24 "  >第24周</option>
 		    
-		    <option value="25"  >第25周</option>
+		    <option value="25 "  >第25周</option>
 		    
-		    <option value="26"  >第26周</option>
+		    <option value="26 "  >第26周</option>
 		    
-		    <option value="27"  >第27周</option>
+		    <option value="27 "  >第27周</option>
 		    
-		    <option value="28"  >第28周</option>
+		    <option value="28 "  >第28周</option>
 		    
-		    <option value="29"  >第29周</option>
+		    <option value="29 "  >第29周</option>
 		    
-		    <option value="30"  >第30周</option>
+		    <option value="30 "  >第30周</option>
 		    
-		<input type="hidden" name="demo" id="demo" value="">
-		</select>学年学期：<select name="xnxq01id" id="xnxq01id" onchange="javascript:document.getElementById('Form1').submit();"　style="width:180px;">
+		<input type="hidden " name="demo " id="demo " value=" ">
+		</select>学年学期：<select name="xnxq01id " id="xnxq01id " onchange="javascript:document.getElementById( 'Form1').submit();
+					 "　style="width:180px; ">
 		
-		<option value="2021-2022-2"  >2021-2022-2</option>
+		<option value="2021-2022-2 "  >2021-2022-2</option>
 		
-		<option value="2021-2022-1"  >2021-2022-1</option>
+		<option value="2021-2022-1 "  >2021-2022-1</option>
 		
-		<option value="2020-2021-2"  >2020-2021-2</option>
+		<option value="2020-2021-2 "  >2020-2021-2</option>
 		
-		<option value="2020-2021-1"  >2020-2021-1</option>
+		<option value="2020-2021-1 "  >2020-2021-1</option>
 		
-		<option value="2019-2020-2"  >2019-2020-2</option>
+		<option value="2019-2020-2 "  >2019-2020-2</option>
 		
-		<option value="2019-2020-1"  >2019-2020-1</option>
+		<option value="2019-2020-1 "  >2019-2020-1</option>
 		
-		<option value="2018-2019-2"  >2018-2019-2</option>
+		<option value="2018-2019-2 "  >2018-2019-2</option>
 		
-		<option value="2018-2019-1"  >2018-2019-1</option>
+		<option value="2018-2019-1 "  >2018-2019-1</option>
 		
-		<option value="2017-2018-2"   selected="selected">2017-2018-2</option>
+		<option value="2017-2018-2 "   selected="selected ">2017-2018-2</option>
 		
-		<option value="2017-2018-1"  >2017-2018-1</option>
+		<option value="2017-2018-1 "  >2017-2018-1</option>
 		
-		<option value="2016-2017-2"  >2016-2017-2</option>
+		<option value="2016-2017-2 "  >2016-2017-2</option>
 		
-		<option value="2016-2017-1"  >2016-2017-1</option>
+		<option value="2016-2017-1 "  >2016-2017-1</option>
 		
-		<option value="2015-2016-2"  >2015-2016-2</option>
+		<option value="2015-2016-2 "  >2015-2016-2</option>
 		
-		<option value="2015-2016-1"  >2015-2016-1</option>
+		<option value="2015-2016-1 "  >2015-2016-1</option>
 		
-		<option value="2014-2015-2"  >2014-2015-2</option>
+		<option value="2014-2015-2 "  >2014-2015-2</option>
 		
-		<option value="2014-2015-1"  >2014-2015-1</option>
+		<option value="2014-2015-1 "  >2014-2015-1</option>
 		
-		<option value="2013-2014-2"  >2013-2014-2</option>
+		<option value="2013-2014-2 "  >2013-2014-2</option>
 		
-		<option value="2013-2014-1"  >2013-2014-1</option>
+		<option value="2013-2014-1 "  >2013-2014-1</option>
 		
-		<option value="2012-2013-2"  >2012-2013-2</option>
+		<option value="2012-2013-2 "  >2012-2013-2</option>
 		
-		<option value="2012-2013-1"  >2012-2013-1</option>
+		<option value="2012-2013-1 "  >2012-2013-1</option>
 		
-		<option value="2011-2012-2"  >2011-2012-2</option>
+		<option value="2011-2012-2 "  >2011-2012-2</option>
 		
-		<option value="2011-2012-1"  >2011-2012-1</option>
+		<option value="2011-2012-1 "  >2011-2012-1</option>
 		
-		<option value="2010-2011-3"  >2010-2011-3</option>
+		<option value="2010-2011-3 "  >2010-2011-3</option>
 		
-		<option value="2010-2011-2"  >2010-2011-2</option>
+		<option value="2010-2011-2 "  >2010-2011-2</option>
 		
-		<option value="2010-2011-1"  >2010-2011-1</option>
+		<option value="2010-2011-1 "  >2010-2011-1</option>
 		
-		<option value="2009-2010-2"  >2009-2010-2</option>
+		<option value="2009-2010-2 "  >2009-2010-2</option>
 		
-		<option value="2009-2010-1"  >2009-2010-1</option>
+		<option value="2009-2010-1 "  >2009-2010-1</option>
 		
-		<option value="2008-2009-2"  >2008-2009-2</option>
+		<option value="2008-2009-2 "  >2008-2009-2</option>
 		
-		<option value="2008-2009-1"  >2008-2009-1</option>
+		<option value="2008-2009-1 "  >2008-2009-1</option>
 		
-		<option value="2007-2008-2"  >2007-2008-2</option>
+		<option value="2007-2008-2 "  >2007-2008-2</option>
 		
-		<option value="2007-2008-1"  >2007-2008-1</option>
+		<option value="2007-2008-1 "  >2007-2008-1</option>
 		
-		<option value="2006-2007-2"  >2006-2007-2</option>
+		<option value="2006-2007-2 "  >2006-2007-2</option>
 		
-		<option value="2006-2007-1"  >2006-2007-1</option>
+		<option value="2006-2007-1 "  >2006-2007-1</option>
 		
-		<option value="2005-2006-2"  >2005-2006-2</option>
+		<option value="2005-2006-2 "  >2005-2006-2</option>
 		
-		<option value="2005-2006-1"  >2005-2006-1</option>
+		<option value="2005-2006-1 "  >2005-2006-1</option>
 		
-		<option value="2004-2005-2"  >2004-2005-2</option>
+		<option value="2004-2005-2 "  >2004-2005-2</option>
 		
-		<option value="2004-2005-1"  >2004-2005-1</option>
+		<option value="2004-2005-1 "  >2004-2005-1</option>
 		
-		</select>&nbsp;<input type="button" value="打 印" class="button"  onclick="print(this)"  >&nbsp;
+		</select>&nbsp;<input type="button " value="打 印 " class="button "  onclick="print(this) "  >&nbsp;
 		
 		<!--  
-		<input type="button" class="button" id="btnShenshen" value="返 回" onclick="javascript:window.location.href='/jsxsd/framework/main.jsp';"/>
+		<input type="button " class="button " id="btnShenshen " value="返 回 " onclick="javascript:window.location.href='/jsxsd/framework/main.jsp'
+					 ; "/>
 		-->
 		
-		<input type="checkbox" name="sfFD" id="sfFD" value="1" onclick="funFD(this.checked)"  checked>放大
+		<input type="checkbox " name="sfFD " id="sfFD " value="1 " onclick="funFD(this.checked) "  checked>放大
         </div>
         	
         	
-		　<table id="kbtable" border="1" width="100%"   cellspacing="0" cellpadding="0"
-				    class="Nsb_r_list Nsb_table">
+		　<table id="kbtable " border="1 " width="100% "   cellspacing="0 " cellpadding="0 "
+				    class="Nsb_r_list Nsb_table ">
 				<tr>
-					<th width="70" height="28" align="center">
+					<th width="70 " height="28 " align="center ">
 						&nbsp;
 					</th>
-					<th width="123" height="28" align="center">星期一</th>
-					<th width="123" height="28" align="center">星期二</th>
-					<th width="123" height="28" align="center">星期三</th>
-					<th width="124" height="28" align="center">星期四</th>
-					<th width="124" height="28" align="center">星期五</th>
-					<th width="124" height="28" align="center">星期六</th>
-					<th width="124" height="28" align="center">星期日</th>
+					<th width="123 " height="28 " align="center ">星期一</th>
+					<th width="123 " height="28 " align="center ">星期二</th>
+					<th width="123 " height="28 " align="center ">星期三</th>
+					<th width="124 " height="28 " align="center ">星期四</th>
+					<th width="124 " height="28 " align="center ">星期五</th>
+					<th width="124 " height="28 " align="center ">星期六</th>
+					<th width="124 " height="28 " align="center ">星期日</th>
 				</tr> 
 				
 					<tr>
-							<th width="70" height="28" align="center">
+							<th width="70 " height="28 " align="center ">
 							1、2节&nbsp;
 							</th>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="82889B4F62734E0CACB9DDE7387D02EB-1-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="82889B4F62734E0CACB9DDE7387D02EB-1-2">
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-1-1" class="kbcontent1">&nbsp;</div>
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-1-2" style="display: none;" class="kbcontent" >&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="82889B4F62734E0CACB9DDE7387D02EB-1-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="82889B4F62734E0CACB9DDE7387D02EB-1-2 ">
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-1-1 " class="kbcontent1 ">&nbsp;</div>
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-1-2 " style="display: none; " class="kbcontent " >&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="82889B4F62734E0CACB9DDE7387D02EB-2-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="82889B4F62734E0CACB9DDE7387D02EB-2-2">
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-2-1" class="kbcontent1">刑法总论(考试)<br/><font title='周次(节次)'>10-15,17(周)</font><br/><font title='教室'>7C01</font><br/>----------------------<br>刑法总论(考试)<br/><font title='周次(节次)'>1-8(周)</font><br/><font title='教室'>7C01</font><br/></div>
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-2-2"
-								style="display: none;" class="kbcontent">刑法总论(考试)<br/><font title='老师'>武良军讲师（高校）</font><br/><font title='周次(节次)'>10-15,17(周)[01-02节]</font><br/><font title='教室'>7C01</font><br/>---------------------<br>刑法总论(考试)<br/><font title='老师'>王子晏副教授</font><br/><font title='周次(节次)'>1-8(周)[01-02节]</font><br/><font title='教室'>7C01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="82889B4F62734E0CACB9DDE7387D02EB-2-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="82889B4F62734E0CACB9DDE7387D02EB-2-2 ">
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-2-1 " class="kbcontent1 ">刑法总论(考试)<br/><font title='周次(节次)'>10-15,17(周)</font><br/><font title='教室'>7C01</font><br/>----------------------<br>刑法总论(考试)<br/><font title='周次(节次)'>1-8(周)</font><br/><font title='教室'>7C01</font><br/></div>
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-2-2 "
+								style="display: none; " class="kbcontent ">刑法总论(考试)<br/><font title='老师'>武良军讲师（高校）</font><br/><font title='周次(节次)'>10-15,17(周)[01-02节]</font><br/><font title='教室'>7C01</font><br/>---------------------<br>刑法总论(考试)<br/><font title='老师'>王子晏副教授</font><br/><font title='周次(节次)'>1-8(周)[01-02节]</font><br/><font title='教室'>7C01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="82889B4F62734E0CACB9DDE7387D02EB-3-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="82889B4F62734E0CACB9DDE7387D02EB-3-2">
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-3-1"  class="kbcontent1">大学计算机导论(考试)<br/><font title='周次(节次)'>1-12(周)</font><br/><font title='教室'>9A01</font><br/></div>
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-3-2"  
-								style="display: none;" class="kbcontent">大学计算机导论(考试)<br/><font title='老师'>张燕X71高级实验师</font><br/><font title='周次(节次)'>1-12(周)[01-02节]</font><br/><font title='教室'>9A01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="82889B4F62734E0CACB9DDE7387D02EB-3-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="82889B4F62734E0CACB9DDE7387D02EB-3-2 ">
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-3-1 "  class="kbcontent1 ">大学计算机导论(考试)<br/><font title='周次(节次)'>1-12(周)</font><br/><font title='教室'>9A01</font><br/></div>
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-3-2 "  
+								style="display: none; " class="kbcontent ">大学计算机导论(考试)<br/><font title='老师'>张燕X71高级实验师</font><br/><font title='周次(节次)'>1-12(周)[01-02节]</font><br/><font title='教室'>9A01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top" >
-								<input type="hidden" name="jx0415zbdiv_1" value="82889B4F62734E0CACB9DDE7387D02EB-4-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="82889B4F62734E0CACB9DDE7387D02EB-4-2">
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-4-1"  class="kbcontent1">大学英语Ⅱ(考试)<br/><font title='周次(节次)'>1-4,6-17(周)</font><br/><font title='教室'>3A03</font><br/></div>
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-4-2"  
-								style="display: none;" class="kbcontent">大学英语Ⅱ(考试)<br/><font title='老师'>高英梅讲师（高校）</font><br/><font title='周次(节次)'>1-4,6-17(周)[01-02节]</font><br/><font title='教室'>3A03</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top " >
+								<input type="hidden " name="jx0415zbdiv_1 " value="82889B4F62734E0CACB9DDE7387D02EB-4-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="82889B4F62734E0CACB9DDE7387D02EB-4-2 ">
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-4-1 "  class="kbcontent1 ">大学英语Ⅱ(考试)<br/><font title='周次(节次)'>1-4,6-17(周)</font><br/><font title='教室'>3A03</font><br/></div>
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-4-2 "  
+								style="display: none; " class="kbcontent ">大学英语Ⅱ(考试)<br/><font title='老师'>高英梅讲师（高校）</font><br/><font title='周次(节次)'>1-4,6-17(周)[01-02节]</font><br/><font title='教室'>3A03</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top"> 
-								<input type="hidden" name="jx0415zbdiv_1" value="82889B4F62734E0CACB9DDE7387D02EB-5-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="82889B4F62734E0CACB9DDE7387D02EB-5-2">
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-5-1"  class="kbcontent1" >&nbsp;</div>
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-5-2"  
-								style="display: none;" class="kbcontent" >&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top "> 
+								<input type="hidden " name="jx0415zbdiv_1 " value="82889B4F62734E0CACB9DDE7387D02EB-5-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="82889B4F62734E0CACB9DDE7387D02EB-5-2 ">
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-5-1 "  class="kbcontent1 " >&nbsp;</div>
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-5-2 "  
+								style="display: none; " class="kbcontent " >&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="82889B4F62734E0CACB9DDE7387D02EB-6-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="82889B4F62734E0CACB9DDE7387D02EB-6-2">
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-6-1"  class="kbcontent1">&nbsp;</div>
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-6-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="82889B4F62734E0CACB9DDE7387D02EB-6-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="82889B4F62734E0CACB9DDE7387D02EB-6-2 ">
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-6-1 "  class="kbcontent1 ">&nbsp;</div>
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-6-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="82889B4F62734E0CACB9DDE7387D02EB-7-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="82889B4F62734E0CACB9DDE7387D02EB-7-2">
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-7-1"  class="kbcontent1" >&nbsp;</div>
-								<div id="82889B4F62734E0CACB9DDE7387D02EB-7-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="82889B4F62734E0CACB9DDE7387D02EB-7-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="82889B4F62734E0CACB9DDE7387D02EB-7-2 ">
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-7-1 "  class="kbcontent1 " >&nbsp;</div>
+								<div id="82889B4F62734E0CACB9DDE7387D02EB-7-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
 							
 					</tr>
 				
 					<tr>
-							<th width="70" height="28" align="center">
+							<th width="70 " height="28 " align="center ">
 							3、4节&nbsp;
 							</th>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="C7E2093925754F56ACAED754DFB8ACAA-1-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="C7E2093925754F56ACAED754DFB8ACAA-1-2">
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-1-1" class="kbcontent1">体育Ⅱ(考试)<br/><font title='周次(节次)'>1-15(周)</font><br/><font title='教室'>操场1</font><br/></div>
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-1-2" style="display: none;" class="kbcontent" >体育Ⅱ(考试)<br/><font title='老师'>李一亮讲师（高校）</font><br/><font title='周次(节次)'>1-15(周)[03-04节]</font><br/><font title='教室'>操场1</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="C7E2093925754F56ACAED754DFB8ACAA-1-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="C7E2093925754F56ACAED754DFB8ACAA-1-2 ">
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-1-1 " class="kbcontent1 ">体育Ⅱ(考试)<br/><font title='周次(节次)'>1-15(周)</font><br/><font title='教室'>操场1</font><br/></div>
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-1-2 " style="display: none; " class="kbcontent " >体育Ⅱ(考试)<br/><font title='老师'>李一亮讲师（高校）</font><br/><font title='周次(节次)'>1-15(周)[03-04节]</font><br/><font title='教室'>操场1</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="C7E2093925754F56ACAED754DFB8ACAA-2-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="C7E2093925754F56ACAED754DFB8ACAA-2-2">
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-2-1" class="kbcontent1">大学英语Ⅱ(考试)<br/><font title='周次(节次)'>1-8,10-17(周)</font><br/><font title='教室'>语音室（6A06）</font><br/></div>
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-2-2"
-								style="display: none;" class="kbcontent">大学英语Ⅱ(考试)<br/><font title='老师'>高英梅讲师（高校）</font><br/><font title='周次(节次)'>1-8,10-17(周)[03-04节]</font><br/><font title='教室'>语音室（6A06）</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="C7E2093925754F56ACAED754DFB8ACAA-2-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="C7E2093925754F56ACAED754DFB8ACAA-2-2 ">
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-2-1 " class="kbcontent1 ">大学英语Ⅱ(考试)<br/><font title='周次(节次)'>1-8,10-17(周)</font><br/><font title='教室'>语音室（6A06）</font><br/></div>
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-2-2 "
+								style="display: none; " class="kbcontent ">大学英语Ⅱ(考试)<br/><font title='老师'>高英梅讲师（高校）</font><br/><font title='周次(节次)'>1-8,10-17(周)[03-04节]</font><br/><font title='教室'>语音室（6A06）</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="C7E2093925754F56ACAED754DFB8ACAA-3-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="C7E2093925754F56ACAED754DFB8ACAA-3-2">
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-3-1"  class="kbcontent1">大学计算机导论(考试)<br/><font title='周次(节次)'>5-12(周)</font><br/><font title='教室'>电脑实验室3（7A05）</font><br/></div>
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-3-2"  
-								style="display: none;" class="kbcontent">大学计算机导论(考试)<br/><font title='老师'>张燕X71高级实验师</font><br/><font title='周次(节次)'>5-12(周)[03-04节]</font><br/><font title='教室'>电脑实验室3（7A05）</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="C7E2093925754F56ACAED754DFB8ACAA-3-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="C7E2093925754F56ACAED754DFB8ACAA-3-2 ">
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-3-1 "  class="kbcontent1 ">大学计算机导论(考试)<br/><font title='周次(节次)'>5-12(周)</font><br/><font title='教室'>电脑实验室3（7A05）</font><br/></div>
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-3-2 "  
+								style="display: none; " class="kbcontent ">大学计算机导论(考试)<br/><font title='老师'>张燕X71高级实验师</font><br/><font title='周次(节次)'>5-12(周)[03-04节]</font><br/><font title='教室'>电脑实验室3（7A05）</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top" >
-								<input type="hidden" name="jx0415zbdiv_1" value="C7E2093925754F56ACAED754DFB8ACAA-4-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="C7E2093925754F56ACAED754DFB8ACAA-4-2">
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-4-1"  class="kbcontent1">&nbsp;</div>
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-4-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top " >
+								<input type="hidden " name="jx0415zbdiv_1 " value="C7E2093925754F56ACAED754DFB8ACAA-4-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="C7E2093925754F56ACAED754DFB8ACAA-4-2 ">
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-4-1 "  class="kbcontent1 ">&nbsp;</div>
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-4-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top"> 
-								<input type="hidden" name="jx0415zbdiv_1" value="C7E2093925754F56ACAED754DFB8ACAA-5-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="C7E2093925754F56ACAED754DFB8ACAA-5-2">
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-5-1"  class="kbcontent1" >中国近现代史纲要(考查)<br/><font title='周次(节次)'>17(周)</font><br/><font title='教室'>8A05</font><br/>----------------------<br>中国近现代史纲要(考查)<br/><font title='周次(节次)'>1-11,15-16(周)</font><br/><font title='教室'>8A05</font><br/></div>
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-5-2"  
-								style="display: none;" class="kbcontent" >中国近现代史纲要(考查)<br/><font title='老师'>王雅娟副教授</font><br/><font title='周次(节次)'>17(周)[03-04节]</font><br/><font title='教室'>8A05</font><br/>---------------------<br>中国近现代史纲要(考查)<br/><font title='老师'>王雅娟副教授</font><br/><font title='周次(节次)'>1-11,15-16(周)[03-04节]</font><br/><font title='教室'>8A05</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top "> 
+								<input type="hidden " name="jx0415zbdiv_1 " value="C7E2093925754F56ACAED754DFB8ACAA-5-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="C7E2093925754F56ACAED754DFB8ACAA-5-2 ">
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-5-1 "  class="kbcontent1 " >中国近现代史纲要(考查)<br/><font title='周次(节次)'>17(周)</font><br/><font title='教室'>8A05</font><br/>----------------------<br>中国近现代史纲要(考查)<br/><font title='周次(节次)'>1-11,15-16(周)</font><br/><font title='教室'>8A05</font><br/></div>
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-5-2 "  
+								style="display: none; " class="kbcontent " >中国近现代史纲要(考查)<br/><font title='老师'>王雅娟副教授</font><br/><font title='周次(节次)'>17(周)[03-04节]</font><br/><font title='教室'>8A05</font><br/>---------------------<br>中国近现代史纲要(考查)<br/><font title='老师'>王雅娟副教授</font><br/><font title='周次(节次)'>1-11,15-16(周)[03-04节]</font><br/><font title='教室'>8A05</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="C7E2093925754F56ACAED754DFB8ACAA-6-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="C7E2093925754F56ACAED754DFB8ACAA-6-2">
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-6-1"  class="kbcontent1">&nbsp;</div>
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-6-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="C7E2093925754F56ACAED754DFB8ACAA-6-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="C7E2093925754F56ACAED754DFB8ACAA-6-2 ">
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-6-1 "  class="kbcontent1 ">&nbsp;</div>
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-6-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="C7E2093925754F56ACAED754DFB8ACAA-7-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="C7E2093925754F56ACAED754DFB8ACAA-7-2">
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-7-1"  class="kbcontent1" >&nbsp;</div>
-								<div id="C7E2093925754F56ACAED754DFB8ACAA-7-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="C7E2093925754F56ACAED754DFB8ACAA-7-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="C7E2093925754F56ACAED754DFB8ACAA-7-2 ">
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-7-1 "  class="kbcontent1 " >&nbsp;</div>
+								<div id="C7E2093925754F56ACAED754DFB8ACAA-7-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
 							
 					</tr>
 				
 					<tr>
-							<th width="70" height="28" align="center">
+							<th width="70 " height="28 " align="center ">
 							5、6节&nbsp;
 							</th>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="E0E0EECC9ACF4C28BFFC454EB81E909C-1-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="E0E0EECC9ACF4C28BFFC454EB81E909C-1-2">
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-1-1" class="kbcontent1">刑法总论(考试)<br/><font title='周次(节次)'>17(周)</font><br/><font title='教室'>9B01</font><br/>----------------------<br>刑法总论(考试)<br/><font title='周次(节次)'>9-16(周)</font><br/><font title='教室'>9B01</font><br/>----------------------<br>刑法总论(考试)<br/><font title='周次(节次)'>1-8(周)</font><br/><font title='教室'>9B01</font><br/></div>
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-1-2" style="display: none;" class="kbcontent" >刑法总论(考试)<br/><font title='老师'>武良军讲师（高校）</font><br/><font title='周次(节次)'>17(周)[05-06节]</font><br/><font title='教室'>9B01</font><br/>---------------------<br>刑法总论(考试)<br/><font title='老师'>武良军讲师（高校）</font><br/><font title='周次(节次)'>9-16(周)[05-06节]</font><br/><font title='教室'>9B01</font><br/>---------------------<br>刑法总论(考试)<br/><font title='老师'>王子晏副教授</font><br/><font title='周次(节次)'>1-8(周)[05-06节]</font><br/><font title='教室'>9B01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-1-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-1-2 ">
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-1-1 " class="kbcontent1 ">刑法总论(考试)<br/><font title='周次(节次)'>17(周)</font><br/><font title='教室'>9B01</font><br/>----------------------<br>刑法总论(考试)<br/><font title='周次(节次)'>9-16(周)</font><br/><font title='教室'>9B01</font><br/>----------------------<br>刑法总论(考试)<br/><font title='周次(节次)'>1-8(周)</font><br/><font title='教室'>9B01</font><br/></div>
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-1-2 " style="display: none; " class="kbcontent " >刑法总论(考试)<br/><font title='老师'>武良军讲师（高校）</font><br/><font title='周次(节次)'>17(周)[05-06节]</font><br/><font title='教室'>9B01</font><br/>---------------------<br>刑法总论(考试)<br/><font title='老师'>武良军讲师（高校）</font><br/><font title='周次(节次)'>9-16(周)[05-06节]</font><br/><font title='教室'>9B01</font><br/>---------------------<br>刑法总论(考试)<br/><font title='老师'>王子晏副教授</font><br/><font title='周次(节次)'>1-8(周)[05-06节]</font><br/><font title='教室'>9B01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="E0E0EECC9ACF4C28BFFC454EB81E909C-2-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="E0E0EECC9ACF4C28BFFC454EB81E909C-2-2">
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-2-1" class="kbcontent1">&nbsp;</div>
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-2-2"
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-2-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-2-2 ">
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-2-1 " class="kbcontent1 ">&nbsp;</div>
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-2-2 "
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="E0E0EECC9ACF4C28BFFC454EB81E909C-3-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="E0E0EECC9ACF4C28BFFC454EB81E909C-3-2">
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-3-1"  class="kbcontent1">中国近现代史纲要(考查)<br/><font title='周次(节次)'>4(周)</font><br/><font title='教室'>3A05</font><br/></div>
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-3-2"  
-								style="display: none;" class="kbcontent">中国近现代史纲要(考查)<br/><font title='老师'>王雅娟副教授</font><br/><font title='周次(节次)'>4(周)[05-06节]</font><br/><font title='教室'>3A05</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-3-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-3-2 ">
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-3-1 "  class="kbcontent1 ">中国近现代史纲要(考查)<br/><font title='周次(节次)'>4(周)</font><br/><font title='教室'>3A05</font><br/></div>
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-3-2 "  
+								style="display: none; " class="kbcontent ">中国近现代史纲要(考查)<br/><font title='老师'>王雅娟副教授</font><br/><font title='周次(节次)'>4(周)[05-06节]</font><br/><font title='教室'>3A05</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top" >
-								<input type="hidden" name="jx0415zbdiv_1" value="E0E0EECC9ACF4C28BFFC454EB81E909C-4-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="E0E0EECC9ACF4C28BFFC454EB81E909C-4-2">
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-4-1"  class="kbcontent1">唐诗导读()<br/><font title='周次(节次)'>1-4,6-9(周)</font><br/><font title='教室'>9A01</font><br/>----------------------<br>先秦诸子导读()<br/><font title='周次(节次)'>10-17(周)</font><br/><font title='教室'>2C01</font><br/></div>
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-4-2"  
-								style="display: none;" class="kbcontent">唐诗导读()<br/><font title='老师'>常如瑜副教授</font><br/><font title='周次(节次)'>1-4,6-9(周)[05-06-07节]</font><br/><font title='教室'>9A01</font><br/>---------------------<br>先秦诸子导读()<br/><font title='老师'>海滨教授</font><br/><font title='周次(节次)'>10-17(周)[05-06-07节]</font><br/><font title='教室'>2C01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top " >
+								<input type="hidden " name="jx0415zbdiv_1 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-4-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-4-2 ">
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-4-1 "  class="kbcontent1 ">唐诗导读()<br/><font title='周次(节次)'>1-4,6-9(周)</font><br/><font title='教室'>9A01</font><br/>----------------------<br>先秦诸子导读()<br/><font title='周次(节次)'>10-17(周)</font><br/><font title='教室'>2C01</font><br/></div>
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-4-2 "  
+								style="display: none; " class="kbcontent ">唐诗导读()<br/><font title='老师'>常如瑜副教授</font><br/><font title='周次(节次)'>1-4,6-9(周)[05-06-07节]</font><br/><font title='教室'>9A01</font><br/>---------------------<br>先秦诸子导读()<br/><font title='老师'>海滨教授</font><br/><font title='周次(节次)'>10-17(周)[05-06-07节]</font><br/><font title='教室'>2C01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top"> 
-								<input type="hidden" name="jx0415zbdiv_1" value="E0E0EECC9ACF4C28BFFC454EB81E909C-5-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="E0E0EECC9ACF4C28BFFC454EB81E909C-5-2">
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-5-1"  class="kbcontent1" >民法总论(考试)<br/><font title='周次(节次)'>1-8(周)</font><br/><font title='教室'>9C01</font><br/>----------------------<br>民法总论(考试)<br/><font title='周次(节次)'>11,13-16(周)</font><br/><font title='教室'>9C01</font><br/></div>
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-5-2"  
-								style="display: none;" class="kbcontent" >民法总论(考试)<br/><font title='老师'>陈龙江副教授</font><br/><font title='周次(节次)'>1-8(周)[05-06-07节]</font><br/><font title='教室'>9C01</font><br/>---------------------<br>民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>11,13-16(周)[05-06-07节]</font><br/><font title='教室'>9C01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top "> 
+								<input type="hidden " name="jx0415zbdiv_1 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-5-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-5-2 ">
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-5-1 "  class="kbcontent1 " >民法总论(考试)<br/><font title='周次(节次)'>1-8(周)</font><br/><font title='教室'>9C01</font><br/>----------------------<br>民法总论(考试)<br/><font title='周次(节次)'>11,13-16(周)</font><br/><font title='教室'>9C01</font><br/></div>
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-5-2 "  
+								style="display: none; " class="kbcontent " >民法总论(考试)<br/><font title='老师'>陈龙江副教授</font><br/><font title='周次(节次)'>1-8(周)[05-06-07节]</font><br/><font title='教室'>9C01</font><br/>---------------------<br>民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>11,13-16(周)[05-06-07节]</font><br/><font title='教室'>9C01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="E0E0EECC9ACF4C28BFFC454EB81E909C-6-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="E0E0EECC9ACF4C28BFFC454EB81E909C-6-2">
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-6-1"  class="kbcontent1">&nbsp;</div>
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-6-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-6-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-6-2 ">
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-6-1 "  class="kbcontent1 ">&nbsp;</div>
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-6-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="E0E0EECC9ACF4C28BFFC454EB81E909C-7-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="E0E0EECC9ACF4C28BFFC454EB81E909C-7-2">
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-7-1"  class="kbcontent1" >&nbsp;</div>
-								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-7-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-7-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="E0E0EECC9ACF4C28BFFC454EB81E909C-7-2 ">
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-7-1 "  class="kbcontent1 " >&nbsp;</div>
+								<div id="E0E0EECC9ACF4C28BFFC454EB81E909C-7-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
 							
 					</tr>
 				
 					<tr>
-							<th width="70" height="28" align="center">
+							<th width="70 " height="28 " align="center ">
 							7、8节&nbsp;
 							</th>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="4DFBAA7383324C68BC21AFB28E85041E-1-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="4DFBAA7383324C68BC21AFB28E85041E-1-2">
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-1-1" class="kbcontent1">军事理论(考查)<br/><font title='周次(节次)'>1-15(单周)</font><br/><font title='教室'>7C01</font><br/>----------------------<br>形势与政策Ⅱ(考查)<br/><font title='周次(节次)'>8,10,12,14(周)</font><br/><font title='教室'>7C01</font><br/></div>
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-1-2" style="display: none;" class="kbcontent" >军事理论(考查)<br/><font title='老师'>杨扬讲师（高校）</font><br/><font title='周次(节次)'>1-15(单周)[07-08节]</font><br/><font title='教室'>7C01</font><br/>---------------------<br>形势与政策Ⅱ(考查)<br/><font title='老师'>饶晓东</font><br/><font title='周次(节次)'>8,10,12,14(周)[07-08节]</font><br/><font title='教室'>7C01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="4DFBAA7383324C68BC21AFB28E85041E-1-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="4DFBAA7383324C68BC21AFB28E85041E-1-2 ">
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-1-1 " class="kbcontent1 ">军事理论(考查)<br/><font title='周次(节次)'>1-15(单周)</font><br/><font title='教室'>7C01</font><br/>----------------------<br>形势与政策Ⅱ(考查)<br/><font title='周次(节次)'>8,10,12,14(周)</font><br/><font title='教室'>7C01</font><br/></div>
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-1-2 " style="display: none; " class="kbcontent " >军事理论(考查)<br/><font title='老师'>杨扬讲师（高校）</font><br/><font title='周次(节次)'>1-15(单周)[07-08节]</font><br/><font title='教室'>7C01</font><br/>---------------------<br>形势与政策Ⅱ(考查)<br/><font title='老师'>饶晓东</font><br/><font title='周次(节次)'>8,10,12,14(周)[07-08节]</font><br/><font title='教室'>7C01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="4DFBAA7383324C68BC21AFB28E85041E-2-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="4DFBAA7383324C68BC21AFB28E85041E-2-2">
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-2-1" class="kbcontent1">&nbsp;</div>
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-2-2"
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="4DFBAA7383324C68BC21AFB28E85041E-2-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="4DFBAA7383324C68BC21AFB28E85041E-2-2 ">
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-2-1 " class="kbcontent1 ">&nbsp;</div>
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-2-2 "
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="4DFBAA7383324C68BC21AFB28E85041E-3-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="4DFBAA7383324C68BC21AFB28E85041E-3-2">
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-3-1"  class="kbcontent1">中国近现代史纲要(考查)<br/><font title='周次(节次)'>4(周)</font><br/><font title='教室'>8B01</font><br/></div>
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-3-2"  
-								style="display: none;" class="kbcontent">中国近现代史纲要(考查)<br/><font title='老师'>王雅娟副教授</font><br/><font title='周次(节次)'>4(周)[07-08节]</font><br/><font title='教室'>8B01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="4DFBAA7383324C68BC21AFB28E85041E-3-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="4DFBAA7383324C68BC21AFB28E85041E-3-2 ">
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-3-1 "  class="kbcontent1 ">中国近现代史纲要(考查)<br/><font title='周次(节次)'>4(周)</font><br/><font title='教室'>8B01</font><br/></div>
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-3-2 "  
+								style="display: none; " class="kbcontent ">中国近现代史纲要(考查)<br/><font title='老师'>王雅娟副教授</font><br/><font title='周次(节次)'>4(周)[07-08节]</font><br/><font title='教室'>8B01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top" >
-								<input type="hidden" name="jx0415zbdiv_1" value="4DFBAA7383324C68BC21AFB28E85041E-4-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="4DFBAA7383324C68BC21AFB28E85041E-4-2">
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-4-1"  class="kbcontent1">唐诗导读()<br/><font title='周次(节次)'>1-4,6-9(周)</font><br/><font title='教室'>9A01</font><br/>----------------------<br>先秦诸子导读()<br/><font title='周次(节次)'>10-17(周)</font><br/><font title='教室'>2C01</font><br/></div>
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-4-2"  
-								style="display: none;" class="kbcontent">唐诗导读()<br/><font title='老师'>常如瑜副教授</font><br/><font title='周次(节次)'>1-4,6-9(周)[05-06-07节]</font><br/><font title='教室'>9A01</font><br/>---------------------<br>先秦诸子导读()<br/><font title='老师'>海滨教授</font><br/><font title='周次(节次)'>10-17(周)[05-06-07节]</font><br/><font title='教室'>2C01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top " >
+								<input type="hidden " name="jx0415zbdiv_1 " value="4DFBAA7383324C68BC21AFB28E85041E-4-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="4DFBAA7383324C68BC21AFB28E85041E-4-2 ">
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-4-1 "  class="kbcontent1 ">唐诗导读()<br/><font title='周次(节次)'>1-4,6-9(周)</font><br/><font title='教室'>9A01</font><br/>----------------------<br>先秦诸子导读()<br/><font title='周次(节次)'>10-17(周)</font><br/><font title='教室'>2C01</font><br/></div>
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-4-2 "  
+								style="display: none; " class="kbcontent ">唐诗导读()<br/><font title='老师'>常如瑜副教授</font><br/><font title='周次(节次)'>1-4,6-9(周)[05-06-07节]</font><br/><font title='教室'>9A01</font><br/>---------------------<br>先秦诸子导读()<br/><font title='老师'>海滨教授</font><br/><font title='周次(节次)'>10-17(周)[05-06-07节]</font><br/><font title='教室'>2C01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top"> 
-								<input type="hidden" name="jx0415zbdiv_1" value="4DFBAA7383324C68BC21AFB28E85041E-5-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="4DFBAA7383324C68BC21AFB28E85041E-5-2">
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-5-1"  class="kbcontent1" >民法总论(考试)<br/><font title='周次(节次)'>1-8(周)</font><br/><font title='教室'>9C01</font><br/>----------------------<br>民法总论(考试)<br/><font title='周次(节次)'>11,13-16(周)</font><br/><font title='教室'>9C01</font><br/></div>
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-5-2"  
-								style="display: none;" class="kbcontent" >民法总论(考试)<br/><font title='老师'>陈龙江副教授</font><br/><font title='周次(节次)'>1-8(周)[05-06-07节]</font><br/><font title='教室'>9C01</font><br/>---------------------<br>民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>11,13-16(周)[05-06-07节]</font><br/><font title='教室'>9C01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top "> 
+								<input type="hidden " name="jx0415zbdiv_1 " value="4DFBAA7383324C68BC21AFB28E85041E-5-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="4DFBAA7383324C68BC21AFB28E85041E-5-2 ">
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-5-1 "  class="kbcontent1 " >民法总论(考试)<br/><font title='周次(节次)'>1-8(周)</font><br/><font title='教室'>9C01</font><br/>----------------------<br>民法总论(考试)<br/><font title='周次(节次)'>11,13-16(周)</font><br/><font title='教室'>9C01</font><br/></div>
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-5-2 "  
+								style="display: none; " class="kbcontent " >民法总论(考试)<br/><font title='老师'>陈龙江副教授</font><br/><font title='周次(节次)'>1-8(周)[05-06-07节]</font><br/><font title='教室'>9C01</font><br/>---------------------<br>民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>11,13-16(周)[05-06-07节]</font><br/><font title='教室'>9C01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="4DFBAA7383324C68BC21AFB28E85041E-6-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="4DFBAA7383324C68BC21AFB28E85041E-6-2">
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-6-1"  class="kbcontent1">&nbsp;</div>
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-6-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="4DFBAA7383324C68BC21AFB28E85041E-6-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="4DFBAA7383324C68BC21AFB28E85041E-6-2 ">
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-6-1 "  class="kbcontent1 ">&nbsp;</div>
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-6-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="4DFBAA7383324C68BC21AFB28E85041E-7-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="4DFBAA7383324C68BC21AFB28E85041E-7-2">
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-7-1"  class="kbcontent1" >&nbsp;</div>
-								<div id="4DFBAA7383324C68BC21AFB28E85041E-7-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="4DFBAA7383324C68BC21AFB28E85041E-7-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="4DFBAA7383324C68BC21AFB28E85041E-7-2 ">
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-7-1 "  class="kbcontent1 " >&nbsp;</div>
+								<div id="4DFBAA7383324C68BC21AFB28E85041E-7-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
 							
 					</tr>
 				
 					<tr>
-							<th width="70" height="28" align="center">
+							<th width="70 " height="28 " align="center ">
 							9、10、11节&nbsp;
 							</th>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="34C56FFBD784484AA1B395F04D0C79EF-1-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="34C56FFBD784484AA1B395F04D0C79EF-1-2">
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-1-1" class="kbcontent1">&nbsp;</div>
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-1-2" style="display: none;" class="kbcontent" >&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="34C56FFBD784484AA1B395F04D0C79EF-1-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="34C56FFBD784484AA1B395F04D0C79EF-1-2 ">
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-1-1 " class="kbcontent1 ">&nbsp;</div>
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-1-2 " style="display: none; " class="kbcontent " >&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="34C56FFBD784484AA1B395F04D0C79EF-2-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="34C56FFBD784484AA1B395F04D0C79EF-2-2">
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-2-1" class="kbcontent1">民法总论(考试)<br/><font title='周次(节次)'>11(周)</font><br/><font title='教室'>9C01</font><br/></div>
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-2-2"
-								style="display: none;" class="kbcontent">民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>11(周)[09-10-11节]</font><br/><font title='教室'>9C01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="34C56FFBD784484AA1B395F04D0C79EF-2-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="34C56FFBD784484AA1B395F04D0C79EF-2-2 ">
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-2-1 " class="kbcontent1 ">民法总论(考试)<br/><font title='周次(节次)'>11(周)</font><br/><font title='教室'>9C01</font><br/></div>
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-2-2 "
+								style="display: none; " class="kbcontent ">民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>11(周)[09-10-11节]</font><br/><font title='教室'>9C01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="34C56FFBD784484AA1B395F04D0C79EF-3-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="34C56FFBD784484AA1B395F04D0C79EF-3-2">
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-3-1"  class="kbcontent1">民法总论(考试)<br/><font title='周次(节次)'>16(周)</font><br/><font title='教室'>7C01</font><br/>----------------------<br>民法总论(考试)<br/><font title='周次(节次)'>15(周)</font><br/><font title='教室'>7C01</font><br/></div>
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-3-2"  
-								style="display: none;" class="kbcontent">民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>16(周)[09-10-11节]</font><br/><font title='教室'>7C01</font><br/>---------------------<br>民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>15(周)[09-10-11节]</font><br/><font title='教室'>7C01</font><br/></div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="34C56FFBD784484AA1B395F04D0C79EF-3-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="34C56FFBD784484AA1B395F04D0C79EF-3-2 ">
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-3-1 "  class="kbcontent1 ">民法总论(考试)<br/><font title='周次(节次)'>16(周)</font><br/><font title='教室'>7C01</font><br/>----------------------<br>民法总论(考试)<br/><font title='周次(节次)'>15(周)</font><br/><font title='教室'>7C01</font><br/></div>
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-3-2 "  
+								style="display: none; " class="kbcontent ">民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>16(周)[09-10-11节]</font><br/><font title='教室'>7C01</font><br/>---------------------<br>民法总论(考试)<br/><font title='老师'>石冠彬其他</font><br/><font title='周次(节次)'>15(周)[09-10-11节]</font><br/><font title='教室'>7C01</font><br/></div>
 							</td>
-							<td width="123" height="28" align="center" valign="top" >
-								<input type="hidden" name="jx0415zbdiv_1" value="34C56FFBD784484AA1B395F04D0C79EF-4-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="34C56FFBD784484AA1B395F04D0C79EF-4-2">
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-4-1"  class="kbcontent1">&nbsp;</div>
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-4-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top " >
+								<input type="hidden " name="jx0415zbdiv_1 " value="34C56FFBD784484AA1B395F04D0C79EF-4-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="34C56FFBD784484AA1B395F04D0C79EF-4-2 ">
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-4-1 "  class="kbcontent1 ">&nbsp;</div>
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-4-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top"> 
-								<input type="hidden" name="jx0415zbdiv_1" value="34C56FFBD784484AA1B395F04D0C79EF-5-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="34C56FFBD784484AA1B395F04D0C79EF-5-2">
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-5-1"  class="kbcontent1" >&nbsp;</div>
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-5-2"  
-								style="display: none;" class="kbcontent" >&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top "> 
+								<input type="hidden " name="jx0415zbdiv_1 " value="34C56FFBD784484AA1B395F04D0C79EF-5-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="34C56FFBD784484AA1B395F04D0C79EF-5-2 ">
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-5-1 "  class="kbcontent1 " >&nbsp;</div>
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-5-2 "  
+								style="display: none; " class="kbcontent " >&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="34C56FFBD784484AA1B395F04D0C79EF-6-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="34C56FFBD784484AA1B395F04D0C79EF-6-2">
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-6-1"  class="kbcontent1">&nbsp;</div>
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-6-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="34C56FFBD784484AA1B395F04D0C79EF-6-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="34C56FFBD784484AA1B395F04D0C79EF-6-2 ">
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-6-1 "  class="kbcontent1 ">&nbsp;</div>
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-6-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
-							<td width="123" height="28" align="center" valign="top">
-								<input type="hidden" name="jx0415zbdiv_1" value="34C56FFBD784484AA1B395F04D0C79EF-7-1">
-								<input type="hidden" name="jx0415zbdiv_2" value="34C56FFBD784484AA1B395F04D0C79EF-7-2">
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-7-1"  class="kbcontent1" >&nbsp;</div>
-								<div id="34C56FFBD784484AA1B395F04D0C79EF-7-2"  
-								style="display: none;" class="kbcontent">&nbsp;</div>
+							<td width="123 " height="28 " align="center " valign="top ">
+								<input type="hidden " name="jx0415zbdiv_1 " value="34C56FFBD784484AA1B395F04D0C79EF-7-1 ">
+								<input type="hidden " name="jx0415zbdiv_2 " value="34C56FFBD784484AA1B395F04D0C79EF-7-2 ">
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-7-1 "  class="kbcontent1 " >&nbsp;</div>
+								<div id="34C56FFBD784484AA1B395F04D0C79EF-7-2 "  
+								style="display: none; " class="kbcontent ">&nbsp;</div>
 							</td>
 							
 					</tr>
 				
 				<tr>
-					<th width="70" height="28" align="center">
+					<th width="70 " height="28 " align="center ">
 					备注:
-					</th> <td colspan="7" align="left">民法总论  1-17周;刑法总论  1-17周;社会实践Ⅰ 何宏米 20-21周;大学计算机导论  1-17周;中国近现代史纲要 王雅娟 1-17周;</td>
+					</th> <td colspan="7 " align="left ">民法总论  1-17周;刑法总论  1-17周;社会实践Ⅰ 何宏米 20-21周;大学计算机导论  1-17周;中国近现代史纲要 王雅娟 1-17周;</td>
 				</tr> 
 				<tr>
-					<th width="70" height="28" align="center">
+					<th width="70 " height="28 " align="center ">
 					已选网络课程:
-					</th> <td colspan="7" align="left"></td>
+					</th> <td colspan="7 " align="left "></td>
 				</tr> 
 </table>
 </form>
@@ -671,59 +680,59 @@ function LogoutGLD(){
 </div>
 <br />
 
-<div id="Footer1_divCopyright" class="Nsb_pw" style="display:;">
-  <div class="Nsb_rights">Copyright (C) 湖南强智科技发展有限公司  All Rights Reserved 湘ICP 备12010071号</div>
+<div id="Footer1_divCopyright " class="Nsb_pw " style="display:; ">
+  <div class="Nsb_rights ">Copyright (C) 湖南强智科技发展有限公司  All Rights Reserved 湘ICP 备12010071号</div>
 </div>
-<script language="javascript">
-loadjs();
-function loadjs(){
-if( ''!=''){
-alert('');
-}
+<script language="javascript ">
+	loadjs();
+	function loadjs() {
+		if ('' != '') {
+			alert('');
+		}
 
-}
+	}
 
-//放大显示详细
-function funFD(flag){
-	if(flag){
-		var jx0415zbdiv_1 = document.getElementsByName("jx0415zbdiv_1");
-		for(var i = 0; i < jx0415zbdiv_1.length; i++){
-			document.getElementById(jx0415zbdiv_1[i].value).style.display="none";
-		}
-		var jx0415zbdiv_2 = document.getElementsByName("jx0415zbdiv_2");
-		for(var i = 0; i < jx0415zbdiv_2.length; i++){
-			document.getElementById(jx0415zbdiv_2[i].value).style.display="";
-		}
-	}else{
-		var jx0415zbdiv_1 = document.getElementsByName("jx0415zbdiv_1");
-		for(var i = 0; i < jx0415zbdiv_1.length; i++){
-			document.getElementById(jx0415zbdiv_1[i].value).style.display="";
-		}
-		var jx0415zbdiv_2 = document.getElementsByName("jx0415zbdiv_2");
-		for(var i = 0; i < jx0415zbdiv_2.length; i++){
-			document.getElementById(jx0415zbdiv_2[i].value).style.display="none";
+	//放大显示详细
+	function funFD(flag) {
+		if (flag) {
+			var jx0415zbdiv_1 = document.getElementsByName("jx0415zbdiv_1 ");
+			for (var i = 0; i < jx0415zbdiv_1.length; i++) {
+				document.getElementById(jx0415zbdiv_1[i].value).style.display = "none ";
+			}
+			var jx0415zbdiv_2 = document.getElementsByName("jx0415zbdiv_2 ");
+			for (var i = 0; i < jx0415zbdiv_2.length; i++) {
+				document.getElementById(jx0415zbdiv_2[i].value).style.display = " ";
+			}
+		} else {
+			var jx0415zbdiv_1 = document.getElementsByName("jx0415zbdiv_1 ");
+			for (var i = 0; i < jx0415zbdiv_1.length; i++) {
+				document.getElementById(jx0415zbdiv_1[i].value).style.display = " ";
+			}
+			var jx0415zbdiv_2 = document.getElementsByName("jx0415zbdiv_2 ");
+			for (var i = 0; i < jx0415zbdiv_2.length; i++) {
+				document.getElementById(jx0415zbdiv_2[i].value).style.display = "none ";
+			}
 		}
 	}
-} 
 
-function search(obj){
-	if(obj != null){
-		obj.value = "查询中";
-		obj.disabled = true;
+	function search(obj) {
+		if (obj != null) {
+			obj.value = "查询中 ";
+			obj.disabled = true;
+		}
+		document.getElementById('Form1').submit();
 	}
-	document.getElementById('Form1').submit();
-}
-function print(obj){
-	var url = "";
-	var xnxq01id = document.getElementById("xnxq01id").value ; 
-	var zc = document.getElementById("zc").value ;  
-	url += "?xnxq01id="+xnxq01id;
-	url += "&zc="+zc;
-	 
-	document.getElementById("FormPrint").action = "/jsxsd/xskb/xskb_print.do"+url;
-	document.getElementById("FormPrint").submit();
-}
-funFD(document.getElementById("sfFD").checked);
+	function print(obj) {
+		var url = " ";
+		var xnxq01id = document.getElementById("xnxq01id ").value;
+		var zc = document.getElementById("zc ").value;
+		url += "?xnxq01id=" + xnxq01id;
+		url += " &zc=" + zc;
+
+		document.getElementById(" FormPrint ").action = "/jsxsd/xskb/xskb_print.do " + url;
+		document.getElementById("FormPrint ").submit();
+	}
+	funFD(document.getElementById("sfFD ").checked);
 
 </script>
 </body>
