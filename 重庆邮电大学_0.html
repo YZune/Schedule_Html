@@ -1,0 +1,429 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <title>.:::::::教务在线 :::::::.</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+    <link href="../jqUI/smoothness/jquery-ui.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../jqUI/smoothness/jquery-ui.min.js"></script>
+    <link href="../css/tpl.css" rel="stylesheet">
+    <script type="text/javascript"> 
+        $(document).ready(function () {
+            $("#stuKbTabs").tabs({
+                beforeLoad: function (event, ui) {
+                    ui.panel.html('Loading...');
+                }
+            }
+            );
+        });
+    </script>
+</head>
+
+<body>
+    <div id="head">
+        <div style="width: 1000px;margin: 0px auto;">
+            <div style="float: left;">
+                <ul>
+                    <li><a href="../index.php"><img src="../images/room.png" width="50px" alt="" /></a></li>
+
+                    <li>〉〉2018-2019学年1学期课表公示 </li>
+                </ul>
+            </div>
+            <div style="float: right;color: rgb(221, 221, 221);">
+                今天是第 -1 周 星期 7
+            </div>
+        </div>
+    </div>
+    <div id="logo" style="background: #E0E0E0;vertical-align: middle;height: 30px;">
+    </div>
+    <div style="width: 1200px;margin: auto;min-height: 500px;padding-top: 10px;">
+        <div id="stuKbTabs">
+            <ul>
+                <li><a href="#stuTabs-table">按表格查询</a></li>
+                <li><a href="#stuTabs-list">按列表查询</a></li>
+            </ul>
+            <div id="stuTabs-table">
+                <div class="printTable">
+                    <style type='text/css'>
+                        .kbTd {
+                            margin-top: 8px;
+                        }
+                    </style>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td style='text-align:center;'>星期一</td>
+                                <td style='text-align:center;'>星期二</td>
+                                <td style='text-align:center;'>星期三</td>
+                                <td style='text-align:center;'>星期四</td>
+                                <td style='text-align:center;'>星期五</td>
+                                <td style='text-align:center;'>星期六</td>
+                                <td style='text-align:center;'>星期日</td>
+                            </tr>
+                        </thead>
+                        <tr style='text-align:center'>
+                            <td style='font-weight:bold;'>1、2节</td>
+                            <td>
+                                <div class='kbTd' zc='00000000111111110000'>SK14181A1040080002<br>A1040080-数据结构<br>地点：智能科学与技术实验室(综合实验楼B515)
+                                    <br>9-16周<font color=#FF0000></font><br><span style='color:#0000FF'>梁峰 必修 .0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=SK14181A1040080002' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class='kbTd' zc='00000000011111100000'>S14181A2020810002<br>A2020810-电子技术实验B<br>地点：电子技术实验室（二）(综合实验楼B203/B204)
+                                    <br>10-15周<font color=#FF0000></font><br><span style='color:#0000FF'>杜佳佳 必修 1.5学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=S14181A2020810002' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class='kbTd' zc='11111111111111110000'>A14181A1110320016<br>A1110320-大学物理B（下）<br>地点：3204
+                                    <br>1-16周<font color=#FF0000></font><br><span style='color:#0000FF'>钟承勇 必修 3.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=A14181A1110320016' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style='text-align:center'>
+                            <td style='font-weight:bold;'>3、4节</td>
+                            <td>
+                                <div class='kbTd' zc='11111111111111110000'>A14181A2021110001<br>A2021110-电工学下<br>地点：3203
+                                    <br>1-16周<font color=#FF0000></font><br><span style='color:#0000FF'>徐昌彪 必修 4.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=A14181A2021110001' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td>
+                                <div class='kbTd' zc='11111111111111110000'>A14181A1040080003<br>A1040080-数据结构<br>地点：3303
+                                    <br>1-16周<font color=#FF0000></font><br><span style='color:#0000FF'>丰江帆 必修 3.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=A14181A1040080003' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td>
+                                <div class='kbTd' zc='10101010101010100000'>A14181A1110320016<br>A1110320-大学物理B（下）<br>地点：3204
+                                    <br>1-15周单周<font color=#FF0000></font><br><span style='color:#0000FF'>钟承勇 必修 3.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=A14181A1110320016' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td>
+                                <div class='kbTd' zc='00001000100000000000'>R181Mooc13001<br>Mooc13 -中西诗学比较研究（Mooc）<br>地点：2102
+                                    <br>5周,9周<font color=#FF0000></font><br><span style='color:#0000FF'>陶永莉 选修 1.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=R181Mooc13001' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td>
+                                <div class='kbTd' zc='00000000011111100000'>S14181A2020810002<br>A2020810-电子技术实验B<br>地点：电子技术实验室（二）(综合实验楼B203/B204)
+                                    <br>10-15周<font color=#FF0000></font><br><span style='color:#0000FF'>杜佳佳 必修 1.5学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=S14181A2020810002' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style='text-align:center'>
+                            <td style='font-weight:bold;'>中午间歇</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style='text-align:center'>
+                            <td style='font-weight:bold;'>5、6节</td>
+                            <td></td>
+                            <td>
+                                <div class='kbTd' zc='01010101010101010000'>T00181A1090030014<br>A1090030-体育（俱乐部）-篮球初级<br>地点：待定
+                                    <br>2-16周双周<font color=#FF0000></font><br><span style='color:#0000FF'>陈绍文 必修 .5学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=T181A1090030080' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class='kbTd' zc='00000000001000000000'>S14181A1110341067<br>A1110341-大学物理实验B（下）<br>地点：物理虚拟仿真实验室(综合实验楼C314/C315/C316)
+                                    <br>11周<font color=#FF0000></font><br><span style='color:#0000FF'>王珏 必修 1.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=S14181A1110341067' target=_blank>选课学生名单</a></b></div>
+                                <div
+                                    class='kbTd' zc='00000010000000000000'>S14181A1110341067<br>A1110341-大学物理实验B（下）<br>地点：物理实验室（二）(综合实验楼C203/C204)
+                                    <br>7周<font color=#FF0000></font><br><span style='color:#0000FF'>王珏 必修 1.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=S14181A1110341067' target=_blank>选课学生名单</a></b></div>
+                                <div
+                                    class='kbTd' zc='00001000100000000000'>S14181A1110341067<br>A1110341-大学物理实验B（下）<br>地点：电学设计性实验室(综合实验楼C310/C311)
+                                    <br>5周,9周<font color=#FF0000></font><br><span style='color:#0000FF'>王珏 必修 1.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=S14181A1110341067' target=_blank>选课学生名单</a></b></div>
+                                <div
+                                    class='kbTd' zc='00100000000000000000'>S14181A1110341067<br>A1110341-大学物理实验B（下）<br>地点：光学设计性实验室(综合实验楼C312/C313)
+                                    <br>3周<font color=#FF0000></font><br><span style='color:#0000FF'>王珏 必修 1.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=S14181A1110341067' target=_blank>选课学生名单</a></b></div>
+                                <div
+                                    class='kbTd' zc='10000000000000101000'>S14181A1110341067<br>A1110341-大学物理实验B（下）<br>地点：物理实验室（四）(综合实验楼C209/C210)
+                                    <br>1周,15-17周单周<font color=#FF0000></font><br><span style='color:#0000FF'>王珏 必修 1.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=S14181A1110341067' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td>
+                                <div class='kbTd' zc='11111111111111000000'>A14181A2140190002<br>A2140190-理论力学<br>地点：4415
+                                    <br>1-14周<font color=#FF0000></font><br><span style='color:#0000FF'>赵洋 必修 3.5学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=A14181A2140190002' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style='text-align:center'>
+                            <td style='font-weight:bold;'>7、8节</td>
+                            <td></td>
+                            <td>
+                                <div class='kbTd' zc='11111111111111000000'>A14181A2140190002<br>A2140190-理论力学<br>地点：4415
+                                    <br>1-14周<font color=#FF0000></font><br><span style='color:#0000FF'>赵洋 必修 3.5学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=A14181A2140190002' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td>
+                                <div class='kbTd' zc='11111111111111110000'>A14181A2021110001<br>A2021110-电工学下<br>地点：3203
+                                    <br>1-16周<font color=#FF0000></font><br><span style='color:#0000FF'>徐昌彪 必修 4.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=A14181A2021110001' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style='text-align:center'>
+                            <td style='font-weight:bold;'>下午间歇</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style='text-align:center'>
+                            <td style='font-weight:bold;'>9、10节</td>
+                            <td>
+                                <div class='kbTd' zc='11111111000000000000'>A14181B1220060047<br>B1220060-大学生职业发展与就业指导1<br>地点：3211
+                                    <br>1-8周<font color=#FF0000></font><br><span style='color:#0000FF'>胡娟 必修 1.0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=A14181B1220060047' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class='kbTd' zc='00001111000000000000'>A14181A1100010043<br>A1100010-形势与政策<br>地点：3205
+                                    <br>5-8周<font color=#FF0000></font><br><span style='color:#0000FF'>李文清 必修 .0学分</span><br><b><a
+                                            href='kbgs-stuList.php?jxb=A14181A1100010043' target=_blank>选课学生名单</a></b></div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style='text-align:center'>
+                            <td style='font-weight:bold;'>11、12节</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="stuTabs-list">
+                <div class="printTable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>教学班</td>
+                                <td>课程号-课程名</td>
+                                <td>类别</td>
+                                <td>教学班分类</td>
+                                <td>选课状态</td>
+                                <td>教师</td>
+                                <td>上课时间</td>
+                                <td>地点</td>
+                                <td>学生名单</td>
+                                <td>备注</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan='1'>A14181A1040080003</td>
+                                <td rowspan='1'>A1040080-数据结构</td>
+                                <td rowspan='1'>必修</td>
+                                <td rowspan='1' align='center'>理论</td>
+                                <td rowspan='1' align='center'>正常 </td>
+                                <td>丰江帆</td>
+                                <td>星期2第3-4节 1-16周</td>
+                                <td>3303</td>
+                                <td rowspan='1' align='center'><a href='kbgs-stuList.php?jxb=A14181A1040080003' target=_blank>名单</a></td>
+                                <td rowspan='1'></td>
+                            </tr>
+                            <tr>
+                                <td rowspan='1'>A14181A1100010043</td>
+                                <td rowspan='1'>A1100010-形势与政策</td>
+                                <td rowspan='1'>必修</td>
+                                <td rowspan='1' align='center'>理论</td>
+                                <td rowspan='1' align='center'>正常 </td>
+                                <td>李文清</td>
+                                <td>星期4第9-10节 5-8周</td>
+                                <td>3205</td>
+                                <td rowspan='1' align='center'><a href='kbgs-stuList.php?jxb=A14181A1100010043' target=_blank>名单</a></td>
+                                <td rowspan='1'></td>
+                            </tr>
+                            <tr>
+                                <td rowspan='2'>A14181A1110320016</td>
+                                <td rowspan='2'>A1110320-大学物理B（下）</td>
+                                <td rowspan='2'>必修</td>
+                                <td rowspan='2' align='center'>理论</td>
+                                <td rowspan='2' align='center'>正常 </td>
+                                <td>钟承勇</td>
+                                <td>星期3第3-4节 1-15周单周</td>
+                                <td>3204</td>
+                                <td rowspan='2' align='center'><a href='kbgs-stuList.php?jxb=A14181A1110320016' target=_blank>名单</a></td>
+                                <td rowspan='2'></td>
+                            </tr>
+                            <tr>
+                                <td>钟承勇 </td>
+                                <td>星期5 第1-2节1-16周 </td>
+                                <td>3204</td>
+                            </tr>
+                            <tr>
+                                <td rowspan='2'>A14181A2021110001</td>
+                                <td rowspan='2'>A2021110-电工学下</td>
+                                <td rowspan='2'>必修</td>
+                                <td rowspan='2' align='center'>理论</td>
+                                <td rowspan='2' align='center'>正常 </td>
+                                <td>徐昌彪 </td>
+                                <td>星期1第3-4节 1-16周</td>
+                                <td>3203</td>
+                                <td rowspan='2' align='center'><a href='kbgs-stuList.php?jxb=A14181A2021110001' target=_blank>名单</a></td>
+                                <td rowspan='2'></td>
+                            </tr>
+                            <tr>
+                                <td>徐昌彪 </td>
+                                <td>星期3 第7-8节1-16周 </td>
+                                <td>3203</td>
+                            </tr>
+                            <tr>
+                                <td rowspan='2'>A14181A2140190002</td>
+                                <td rowspan='2'>A2140190-理论力学</td>
+                                <td rowspan='2'>必修</td>
+                                <td rowspan='2' align='center'>理论</td>
+                                <td rowspan='2' align='center'>正常 </td>
+                                <td>赵洋</td>
+                                <td>星期2第7-8节 1-14周</td>
+                                <td>4415</td>
+                                <td rowspan='2' align='center'><a href='kbgs-stuList.php?jxb=A14181A2140190002' target=_blank>名单</a></td>
+                                <td rowspan='2'></td>
+                            </tr>
+                            <tr>
+                                <td>赵洋 </td>
+                                <td>星期5 第5-6节1-14周 </td>
+                                <td>4415</td>
+                            </tr>
+                            <tr>
+                                <td rowspan='1'>A14181B1220060047</td>
+                                <td rowspan='1'>B1220060-大学生职业发展与就业指导1</td>
+                                <td rowspan='1'>必修</td>
+                                <td rowspan='1' align='center'>理论</td>
+                                <td rowspan='1' align='center'>正常 </td>
+                                <td>胡娟</td>
+                                <td>星期1第9-10节 1-8周</td>
+                                <td>3211</td>
+                                <td rowspan='1' align='center'><a href='kbgs-stuList.php?jxb=A14181B1220060047' target=_blank>名单</a></td>
+                                <td rowspan='1'></td>
+                            </tr>
+                            <tr>
+                                <td rowspan='1'>R181Mooc13001</td>
+                                <td rowspan='1'>Mooc13 -中西诗学比较研究（Mooc）</td>
+                                <td rowspan='1'>选修</td>
+                                <td rowspan='1' align='center'>理论</td>
+                                <td rowspan='1' align='center'>正常 </td>
+                                <td>陶永莉</td>
+                                <td>星期4第3-4节 5周,9周</td>
+                                <td>2102</td>
+                                <td rowspan='1' align='center'><a href='kbgs-stuList.php?jxb=R181Mooc13001' target=_blank>名单</a></td>
+                                <td rowspan='1'></td>
+                            </tr>
+                            <tr>
+                                <td rowspan='5'>S14181A1110341067</td>
+                                <td rowspan='5'>A1110341-大学物理实验B（下）</td>
+                                <td rowspan='5'>必修</td>
+                                <td rowspan='5' align='center'>实验实践</td>
+                                <td rowspan='5' align='center'>正常 </td>
+                                <td>王珏</td>
+                                <td>星期4第5-6节 11周</td>
+                                <td>物理虚拟仿真实验室(综合实验楼C314/C315/C316)</td>
+                                <td rowspan='5' align='center'><a href='kbgs-stuList.php?jxb=S14181A1110341067' target=_blank>名单</a></td>
+                                <td rowspan='5'></td>
+                            </tr>
+                            <tr>
+                                <td>王珏 </td>
+                                <td>星期4 第5-6节7周 </td>
+                                <td>物理实验室（二）(综合实验楼C203/C204)</td>
+                            </tr>
+                            <tr>
+                                <td>王珏 </td>
+                                <td>星期4 第5-6节5周,9周 </td>
+                                <td>电学设计性实验室(综合实验楼C310/C311)</td>
+                            </tr>
+                            <tr>
+                                <td>王珏 </td>
+                                <td>星期4 第5-6节3周 </td>
+                                <td>光学设计性实验室(综合实验楼C312/C313)</td>
+                            </tr>
+                            <tr>
+                                <td>王珏 </td>
+                                <td>星期4 第5-6节1周,15-17周单周 </td>
+                                <td>物理实验室（四）(综合实验楼C209/C210)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan='2'>S14181A2020810002</td>
+                                <td rowspan='2'>A2020810-电子技术实验B</td>
+                                <td rowspan='2'>必修</td>
+                                <td rowspan='2' align='center'>实验实践</td>
+                                <td rowspan='2' align='center'>正常 </td>
+                                <td>杜佳佳</td>
+                                <td>星期3第1-2节 10-15周</td>
+                                <td>电子技术实验室（二）(综合实验楼B203/B204)</td>
+                                <td rowspan='2' align='center'><a href='kbgs-stuList.php?jxb=S14181A2020810002' target=_blank>名单</a></td>
+                                <td rowspan='2'></td>
+                            </tr>
+                            <tr>
+                                <td>杜佳佳 </td>
+                                <td>星期5 第3-4节10-15周 </td>
+                                <td>电子技术实验室（二）(综合实验楼B203/B204)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan='1'>SK14181A1040080002</td>
+                                <td rowspan='1'>A1040080-数据结构</td>
+                                <td rowspan='1'>必修</td>
+                                <td rowspan='1' align='center'>实验实践</td>
+                                <td rowspan='1' align='center'>正常 </td>
+                                <td>梁峰</td>
+                                <td>星期1第1-2节 9-16周</td>
+                                <td>智能科学与技术实验室(综合实验楼B515)</td>
+                                <td rowspan='1' align='center'><a href='kbgs-stuList.php?jxb=SK14181A1040080002' target=_blank>名单</a></td>
+                                <td rowspan='1'></td>
+                            </tr>
+                            <tr>
+                                <td rowspan='1'>T00181A1090030014</td>
+                                <td rowspan='1'>A1090030-体育（俱乐部）-篮球初级</td>
+                                <td rowspan='1'>必修</td>
+                                <td rowspan='1' align='center'>理论</td>
+                                <td rowspan='1' align='center'>正常 </td>
+                                <td>陈绍文</td>
+                                <td>星期2第5-6节 2-16周双周</td>
+                                <td>待定</td>
+                                <td rowspan='1' align='center'><a href='kbgs-stuList.php?jxb=T00181A1090030014' target=_blank>名单</a></td>
+                                <td rowspan='1'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="//cqu.pt/run.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
